@@ -6,14 +6,11 @@ import Button from "react-bootstrap/Button";
 import pyramidImg from "../../assets/pyramid.png";
 
 const Home = () => {
-  const [randomQuote, setRandomQuote] = useState({
-    quote: "I would have lived in peace. But my enemies brought me war.",
-    character: "Darrow O'Lykos",
-  });
+  const { quote, getRandomQuote } = useGetRandomQuote();
   const [quoteKey, setQuoteKey] = useState(0);
 
   const handleClick = () => {
-    useGetRandomQuote(setRandomQuote);
+    getRandomQuote();
     setQuoteKey((prevKey) => prevKey + 1);
   };
 
@@ -25,7 +22,7 @@ const Home = () => {
       key={quoteKey}
       className="home d-flex flex-column justify-content-center align-items-center p-3"
     >
-      <QuoteCard character={randomQuote.character} quote={randomQuote.quote} />
+      <QuoteCard character={quote.character} quote={quote.quote} />
 
       <div className="d-flex flex-column gap-3">
         <Button onClick={handleClick}>Get Random Quote</Button>
