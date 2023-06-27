@@ -42,7 +42,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     .home {
-        min-height: 100%;
+        min-height: 90%;
         gap: 5rem;
     }
 
