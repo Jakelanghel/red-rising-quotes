@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useGetRandomQuote } from "../../hooks/useGetRandomQuote";
-import QuoteCard from "../shared/quote-card/QuoteCard";
+import QuoteCard from "./quote-card/QuoteCard";
 import Button from "react-bootstrap/Button";
 import pyramidImg from "../../assets/pyramid.png";
 

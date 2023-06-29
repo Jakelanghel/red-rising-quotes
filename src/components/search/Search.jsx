@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useGetCharacterNames } from "../../hooks/useGetCharacterNames";
-import { useGetCharacterQuote } from "../../hooks/useGetCharacterQuote";
+import { useGetCharacterQuotes } from "../../hooks/useGetCharacterQuotes";
 import { nanoid } from "nanoid";
 import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
@@ -10,9 +10,9 @@ const Search = () => {
   const characters = useGetCharacterNames();
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [quantity, setQuantity] = useState(0);
-  const { quoteData, getCharacterQuotes } = useGetCharacterQuote();
+  const { quotesData, getCharacterQuotes } = useGetCharacterQuotes();
 
-  console.log(quoteData);
+  console.log(quotesData);
 
   const handleCharacterSelect = (eventKey) => {
     setSelectedCharacter(eventKey);
@@ -22,7 +22,11 @@ const Search = () => {
   };
 
   const handleSubmit = () => {
-    getCharacterQuotes(selectedCharacter);
+    if (selectedCharacter) {
+      getCharacterQuotes(selectedCharacter, quantity);
+    } else {
+      console.log("Please select a character");
+    }
   };
 
   const characterNameElements = characters.map((character) => {
@@ -33,11 +37,27 @@ const Search = () => {
     );
   });
 
-  const quoteElements = quoteData
-    ? quoteData.quotes.map((quote) => {
-        <CharacterQuote quoteData={quote} />;
-      })
+  const quoteElements = quotesData
+    ? quotesData.quotes.map((quote) => (
+        <CharacterQuote quoteData={quote} key={nanoid()} />
+      ))
     : null;
+
+  const title = quotesData ? (
+    <h1 className="fs-1 mt-2">{quotesData.name}</h1>
+  ) : (
+    <h1 className="fs-4 mt-2">
+      Select a characters name and the number of quotes you want to fetch.
+    </h1>
+  );
+
+  const subtitle = quotesData ? (
+    <h2 className="fs-6 mt-2">{quotesData.description}</h2>
+  ) : (
+    <h2 className="fs-6 mt-2">
+      If no quantity is selected all quotes for that character will be fetched.
+    </h2>
+  );
 
   return (
     <div className="search d-flex flex-column justify-content-center align-items-center p-3 gap-2">
@@ -71,10 +91,10 @@ const Search = () => {
 
       <Button onClick={handleSubmit}>Get Quotes</Button>
 
-      <div className="container-quote">
-        <h1 className="text-white text-center fs-5 mt-2">
-          Select a characters name and the number of quotes you want to fetch.
-        </h1>
+      <div className="container-quote text-white text-center mt-4">
+        {title}
+        {subtitle}
+        {quoteElements}
       </div>
     </div>
   );
