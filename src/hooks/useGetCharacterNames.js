@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 export const useGetCharacterNames = () => {
-  const [characters, setCharacters] = useState([]);
+  const [allCharacters, setCharacters] = useState([]);
 
   useEffect(() => {
     try {
@@ -15,5 +15,5 @@ export const useGetCharacterNames = () => {
     }
   }, []);
 
-  return characters;
+  return allCharacters;
 };
