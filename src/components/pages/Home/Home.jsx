@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { useGetRandomQuote } from "../../hooks/useGetRandomQuote";
+import { useGetRandomQuote } from "../../../hooks/useGetRandomQuote";
 import QuoteCard from "./quote-card/QuoteCard";
 import Button from "react-bootstrap/Button";
-import pyramidImg from "../../assets/pyramid.png";
+import pyramidImg from "../../../assets/pyramid.png";
 
 const Home = () => {
   const { quote, getRandomQuote } = useGetRandomQuote();

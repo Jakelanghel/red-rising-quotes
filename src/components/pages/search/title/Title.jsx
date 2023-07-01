@@ -1,7 +1,8 @@
 import React from "react";
 
 const Title = (props) => {
-  return props.quotesData ? (
+  const { quotesData } = props;
+  return quotesData ? (
     <h1 className="fs-1 mt-2">{quotesData.name}</h1>
   ) : (
     <h1 className="fs-4 mt-2">
