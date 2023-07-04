@@ -10,7 +10,7 @@ import SearchDropDowns from "./search-drop-downs/SearchDropDowns";
 const Search = (props) => {
   const { allCharacters } = props;
   const [selectedCharacter, setSelectedCharacter] = useState(null);
-  const [quantity, setQuantity] = useState(0);
+  const [length, setLength] = useState(0);
 
   const { quotesData, getCharacterQuotes } = useGetCharacterQuotes();
 
@@ -18,12 +18,12 @@ const Search = (props) => {
     setSelectedCharacter(eventKey);
   };
   const handleQuantitySelect = (eventKey) => {
-    setQuantity(eventKey);
+    setLength(eventKey);
   };
 
   const handleSubmit = () => {
     if (selectedCharacter) {
-      getCharacterQuotes(selectedCharacter, quantity);
+      getCharacterQuotes(selectedCharacter, length);
     } else {
       console.log("Please select a character");
     }
@@ -32,7 +32,7 @@ const Search = (props) => {
   const quoteElements = generateQuoteElements(quotesData);
 
   return (
-    <div className="search d-flex flex-column justify-content-center align-items-center p-3 gap-2">
+    <div className="d-flex flex-column justify-content-center align-items-center p-3 gap-2">
       <SearchDropDowns
         allCharacters={allCharacters}
         handleCharacterSelect={handleCharacterSelect}

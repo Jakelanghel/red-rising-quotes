@@ -46,7 +46,7 @@ export const GlobalStyles = createGlobalStyle`
         gap: 5rem;
     }
 
-    .container-quote {
-        /* background-color: #232327; */
+    .text-grey {
+        color:  #9B9D9E;
     }
 `;
