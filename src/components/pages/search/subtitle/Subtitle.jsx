@@ -1,7 +1,6 @@
 import React from "react";
 
-const Subtitle = (props) => {
-  const { quotesData } = props;
+const Subtitle = ({ quotesData }) => {
   return quotesData ? (
     <h2 className="fs-6 mt-2">{quotesData.description}</h2>
   ) : (

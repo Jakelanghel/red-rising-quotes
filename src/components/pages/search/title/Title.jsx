@@ -1,7 +1,6 @@
 import React from "react";
 
-const Title = (props) => {
-  const { quotesData } = props;
+const Title = ({ quotesData }) => {
   return quotesData ? (
     <h1 className="fs-1 mt-2">{quotesData.name}</h1>
   ) : (

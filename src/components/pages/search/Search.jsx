@@ -7,36 +7,15 @@ import Title from "./title/Title";
 import Subtitle from "./subtitle/Subtitle";
 import SearchDropDowns from "./search-drop-downs/SearchDropDowns";
 
-const Search = (props) => {
-  const { allCharacters } = props;
-  const [selectedCharacter, setSelectedCharacter] = useState(null);
-  const [length, setLength] = useState(0);
-
+const Search = ({ allCharacters }) => {
   const { quotesData, getCharacterQuotes } = useGetCharacterQuotes();
-
-  const handleCharacterSelect = (eventKey) => {
-    setSelectedCharacter(eventKey);
-  };
-  const handleQuantitySelect = (eventKey) => {
-    setLength(eventKey);
-  };
-
-  const handleSubmit = () => {
-    if (selectedCharacter) {
-      getCharacterQuotes(selectedCharacter, length);
-    } else {
-      console.log("Please select a character");
-    }
-  };
-
   const quoteElements = generateQuoteElements(quotesData);
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center p-3 gap-2">
       <SearchDropDowns
         allCharacters={allCharacters}
-        handleCharacterSelect={handleCharacterSelect}
-        handleQuantitySelect={handleQuantitySelect}
+        getCharacterQuotes={getCharacterQuotes}
       />
 
       <Button onClick={handleSubmit}>Get Quotes</Button>

@@ -1,33 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { generateQuestions } from "../generate-questions/generateQuestions";
 
-const GameBoard = (props) => {
-  const { gameState, setGameState, allCharacters, quotesData } = props;
-
+const GameBoard = ({ gameState, setGameState, allCharacters, quotesData }) => {
   const handleClick = (isCorrect) => {
     const currentQuestion = gameState.currentQuestion + 1;
-    const gameOver = currentQuestion === gameState.length ? true : false;
+    const gameOver = currentQuestion === gameState.length;
 
-    if (isCorrect) {
-      setGameState((oldState) => {
-        const newState = {
-          ...oldState,
-          gameOver: gameOver,
-          currentQuestion: currentQuestion,
-          score: oldState.score + 1,
-        };
-        return newState;
-      });
-    } else {
-      setGameState((oldState) => {
-        const newState = {
-          ...oldState,
-          gameOver: gameOver,
-          currentQuestion: currentQuestion,
-        };
-        return newState;
-      });
-    }
+    setGameState((oldState) => ({
+      ...oldState,
+      gameOver,
+      currentQuestion,
+      score: isCorrect ? oldState.score + 1 : oldState.score,
+    }));
   };
 
   const questionElements = generateQuestions(
@@ -40,12 +24,7 @@ const GameBoard = (props) => {
     ? questionElements[gameState.currentQuestion]
     : null;
 
-  return (
-    <div className="text-grey text-center p-2">
-      <h2 className="fs-4 mt-4">Match the quote to the character.</h2>
-      {question}
-    </div>
-  );
+  return <div className="text-grey text-center p-2">{question}</div>;
 };
 
 export default GameBoard;

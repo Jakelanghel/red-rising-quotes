@@ -49,4 +49,8 @@ export const GlobalStyles = createGlobalStyle`
     .text-grey {
         color:  #9B9D9E;
     }
+
+    .answer {
+        width: 45%;
+    }
 `;

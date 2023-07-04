@@ -1,9 +1,7 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
-const GameOver = (props) => {
-  const { score, length, setGameState } = props;
-
+const GameOver = ({ score, length, setGameState }) => {
   const handelClick = () => {
     const reset = {
       gameStarted: false,

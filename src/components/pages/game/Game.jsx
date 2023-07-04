@@ -1,14 +1,10 @@
 import React, { useState } from "react";
-import { useGetBooks } from "../../../hooks/useGetBooks";
 import { useGetBookQuotes } from "../../../hooks/useGetBookQuotes";
 import GameDropDowns from "./game-drop-downs/GameDropDowns";
-import Button from "react-bootstrap/Button";
 import GameBoard from "./game-board/GameBoard";
 import GameOver from "./game-over/GameOver";
 
-const Game = (props) => {
-  const { allCharacters } = props;
-  const allBooks = useGetBooks();
+const Game = ({ allCharacters }) => {
   const { quotesData, getBookQuotes } = useGetBookQuotes();
 
   const [gameState, setGameState] = useState({
@@ -21,40 +17,12 @@ const Game = (props) => {
     score: 0,
   });
 
-  const handleBookSelect = (eventKey) => {
-    setGameState((oldState) => ({ ...oldState, selectedBook: eventKey }));
-  };
-
-  const handleLengthSelect = (eventKey) => {
-    const length = parseInt(eventKey);
-    setGameState((oldState) => ({ ...oldState, length: length }));
-  };
-
-  const startGame = () => {
-    if (gameState.selectedBook && gameState.length) {
-      getBookQuotes(gameState.selectedBook, gameState.length);
-      setGameState((oldState) => ({
-        ...oldState,
-        error: false,
-        gameStarted: true,
-      }));
-    } else {
-      setGameState((oldState) => ({
-        ...oldState,
-        error: true,
-      }));
-    }
-  };
-
   const renderedElements = !gameState.gameStarted ? (
-    <>
-      <GameDropDowns
-        allBooks={allBooks}
-        handleBookSelect={handleBookSelect}
-        handleLengthSelect={handleLengthSelect}
-      />
-      <Button onClick={startGame}>Start Game</Button>
-    </>
+    <GameDropDowns
+      gameState={gameState}
+      setGameState={setGameState}
+      getBookQuotes={getBookQuotes}
+    />
   ) : !gameState.gameOver ? (
     <GameBoard
       gameState={gameState}
@@ -70,20 +38,25 @@ const Game = (props) => {
     />
   );
 
-  const errorMsg = gameState.error ? (
-    <h2 className="text-grey fs-5 text-center mt-4">
-      Please select a book and length of quiz to beguin.
-    </h2>
-  ) : null;
+  const errorMsg =
+    gameState.error === true ? (
+      <h2 className="text-grey fs-5 text-center mt-4">
+        Please select a book and length of quiz to begin.
+      </h2>
+    ) : null;
+
+  const title = !gameState.gameStarted
+    ? "Character Quote Challenge"
+    : "Match the quote to the character";
 
   return (
-    <div className="">
-      <h1 className="text-white text-center mt-4">Character Quote Challenge</h1>
+    <>
+      <h1 className="text-white text-center mt-4">{title}</h1>
       <div className="d-flex flex-column justify-content-center align-items-center gap-2">
         {renderedElements}
         {errorMsg}
       </div>
-    </div>
+    </>
   );
 };
 

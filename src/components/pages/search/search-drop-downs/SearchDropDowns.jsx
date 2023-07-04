@@ -1,9 +1,27 @@
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import NamesDropDown from "./names-drop-down/NamesDropDown";
+import { Button } from "react-bootstrap";
 
-const SearchDropDowns = (props) => {
-  const { allCharacters, handleCharacterSelect, handleQuantitySelect } = props;
+const SearchDropDowns = ({ allCharacters, getCharacterQuotes }) => {
+  const [selectedCharacter, setSelectedCharacter] = useState(null);
+  const [length, setLength] = useState(0);
+
+  const handleCharacterSelect = (eventKey) => {
+    setSelectedCharacter(eventKey);
+  };
+  const handleQuantitySelect = (eventKey) => {
+    setLength(eventKey);
+  };
+
+  const handleSubmit = () => {
+    if (selectedCharacter) {
+      getCharacterQuotes(selectedCharacter, length);
+    } else {
+      console.log("Please select a character");
+    }
+  };
+
   return (
     <div className="d-flex flex-row justify-content-center align-items-center gap-2">
       <Dropdown className="character-selector" onSelect={handleCharacterSelect}>
@@ -30,6 +48,8 @@ const SearchDropDowns = (props) => {
           <Dropdown.Item eventKey="all">All</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
+
+      <Button onClick={handleSubmit}>Get Quotes</Button>
     </div>
   );
 };

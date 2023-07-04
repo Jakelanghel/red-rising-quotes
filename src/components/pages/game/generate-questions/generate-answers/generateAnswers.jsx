@@ -19,9 +19,11 @@ export const generateAnswers = (allCharacters, quote, handleClick) => {
   };
 
   return answers.map((ans) => {
+    const arr = ans.split(" ");
+    const name = arr[0];
     return (
-      <Button key={nanoid()} onClick={checkAns}>
-        {ans}
+      <Button key={nanoid()} onClick={checkAns} className="answer">
+        {name}
       </Button>
     );
   });

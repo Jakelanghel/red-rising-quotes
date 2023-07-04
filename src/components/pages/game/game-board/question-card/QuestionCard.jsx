@@ -2,11 +2,13 @@ import React from "react";
 
 const QuestionCard = (props) => {
   const { answerElements, question } = props;
-  console.log(typeof answerElements);
+  console.log(question.length);
   return (
-    <div>
-      <h2>{question}</h2>
-      <div>{answerElements}</div>
+    <div className="d-flex flex-column justify-content-center align-items-center gap-4 mt-3">
+      <p className="fs-3">{question}</p>
+      <div className="d-flex flex-row flex-wrap justify-content-center align-items-center gap-2">
+        {answerElements}
+      </div>
     </div>
   );
 };
