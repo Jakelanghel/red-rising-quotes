@@ -37,7 +37,11 @@ const GameDropDowns = (props) => {
     <div className="d-flex flex-column justify-content-center align-items-center gap-2">
       <div className="d-flex flex-row justify-content-center align-items-center gap-2">
         <Dropdown onSelect={handleBookSelect}>
-          <Dropdown.Toggle variant="primary" id="dropdown-basic">
+          <Dropdown.Toggle
+            variant="primary"
+            id="dropdown-basic"
+            className="button"
+          >
             Select Book
           </Dropdown.Toggle>
           <Dropdown.Menu>
@@ -45,7 +49,11 @@ const GameDropDowns = (props) => {
           </Dropdown.Menu>
         </Dropdown>
         <Dropdown onSelect={handleLengthSelect}>
-          <Dropdown.Toggle variant="primary" id="dropdown-basic">
+          <Dropdown.Toggle
+            variant="primary"
+            id="dropdown-basic"
+            className="button"
+          >
             Select length
           </Dropdown.Toggle>
 
@@ -57,7 +65,9 @@ const GameDropDowns = (props) => {
           </Dropdown.Menu>
         </Dropdown>
       </div>
-      <Button onClick={startGame}>Start Game</Button>
+      <Button onClick={startGame} className="button">
+        Start Game
+      </Button>
     </div>
   );
 };

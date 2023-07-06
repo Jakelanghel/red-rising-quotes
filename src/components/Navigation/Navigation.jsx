@@ -6,10 +6,10 @@ function Navigation() {
     <>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand as={Link} to="/" className="fs-4">
+          <Navbar.Brand as={Link} to="/" className="brand fs-4">
             RR Quotes
           </Navbar.Brand>
-          <Nav className="me-auto fs-6">
+          <Nav className="fs-6">
             <Nav.Link as={Link} to="/" className="nav-link">
               Home
             </Nav.Link>

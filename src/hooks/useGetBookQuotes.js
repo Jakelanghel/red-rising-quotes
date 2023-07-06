@@ -1,20 +1,27 @@
 import { useState } from "react";
-import { generateRandomNumbers } from "../util/generateRandomNumbers";
+import { filterQuotes } from "../util/filterQuotes";
 
 export const useGetBookQuotes = () => {
   const [quotesData, setQuotesData] = useState(null);
 
   const getBookQuotes = (selectedBook, length) => {
-    fetch(`http://localhost:5000/api/red-rising/game/?slug=${selectedBook}`)
+    let url;
+    let quotesKey;
+
+    // if selectedBook is All fetch all quotes
+    if (selectedBook !== "all-books") {
+      url = `http://localhost:5000/api/red-rising/game/?slug=${selectedBook}`;
+      quotesKey = "quotes";
+    } else {
+      url = "http://localhost:5000/api/red-rising/all/";
+      quotesKey = "results";
+    }
+
+    fetch(url)
       .then((response) => response.json())
       .then((data) => {
         // filter out quotes that are to long
-        const quotesArr = data.quotes.filter(
-          (quote) => quote.text.length < 250
-        );
-        // get random indexes and use them to select random quotes
-        const indexArr = generateRandomNumbers(quotesArr, length);
-        const modifiedQuotes = indexArr.map((index) => quotesArr[index]);
+        const modifiedQuotes = filterQuotes(data[quotesKey], length);
         setQuotesData({ ...data, quotes: modifiedQuotes });
       })
       .catch((error) => {

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { useGetCharacterQuotes } from "../../../hooks/useGetCharacterQuotes";
 import { generateQuoteElements } from "./generate-quote-elements/generateQuoteElements";
 
-import Button from "react-bootstrap/Button";
+import Page from "../../shared/motion/Page";
 import Title from "./title/Title";
 import Subtitle from "./subtitle/Subtitle";
 import SearchDropDowns from "./search-drop-downs/SearchDropDowns";
@@ -12,13 +12,11 @@ const Search = ({ allCharacters }) => {
   const quoteElements = generateQuoteElements(quotesData);
 
   return (
-    <div className="d-flex flex-column justify-content-center align-items-center p-3 gap-2">
+    <Page>
       <SearchDropDowns
         allCharacters={allCharacters}
         getCharacterQuotes={getCharacterQuotes}
       />
-
-      <Button onClick={handleSubmit}>Get Quotes</Button>
 
       <div className="text-white text-center mt-4">
         <Title quotesData={quotesData} />
@@ -28,7 +26,7 @@ const Search = ({ allCharacters }) => {
           {quoteElements}
         </div>
       </div>
-    </div>
+    </Page>
   );
 };
 

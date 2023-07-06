@@ -14,43 +14,76 @@ export const GlobalStyles = createGlobalStyle`
         height: 100%;
     }
 
-    .quote-card {
-        min-height: 150px;
-        max-width: 400px;
+    .brand {
+        color: #991E1F;
+        font-weight: 700;
+        letter-spacing: 1px;
     }
 
-    .quote, 
-    .character {
-        font-weight: 300;
-        text-align: center;
-        color: #fff;
-        font-family: 'League Spartan', sans-serif;
-
+    .button {
+        background-color: #991E1F !important;
+        border: none;
+        color: #212529 !important;
+        font-weight: 700;
     }
 
-    .quote {
-        font-size: 1.5rem;
+    .button:active {
+        background-color: #991E1F !important;
+        border: none;
+        color: #212529 !important;
+        font-weight: 700;
     }
 
-    .character {
-        font-size: 1.5rem;
-    }
-
-    .pyramid {
-        width: 100%;
-        opacity: .8;
-    }
-
-    .home {
-        min-height: 90%;
-        gap: 5rem;
+    .button:hover {
+        opacity: 1;
+        background-color: #991E1F;
+        border: none;
+        color: #212529;
     }
 
     .text-grey {
         color:  #9B9D9E;
     }
 
+    .home {
+        min-height: 95%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .pyramid {
+        width: 100%;
+        opacity: 0.8;
+        margin-top: 3rem;
+    }
+
     .answer {
         width: 45%;
+    }
+
+    @media screen and (min-width: 400px){
+        .nav-link {
+            font-size: 1.15rem;
+        }
+    }
+    @media screen and (min-width: 1000px){
+       
+        .button {
+            background-color: #991E1F;
+            border: none;
+            color: #212529;
+            font-weight: 700;
+            font-size: 1.15rem;
+            opacity: .5;
+
+        }
+
+        .button:hover {
+            opacity: 1;
+            background-color: #991E1F;
+            border: none;
+            color: #212529;
+        }
     }
 `;
