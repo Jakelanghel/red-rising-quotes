@@ -1,19 +1,20 @@
 import { generateRandomNumbers } from "../../../../../util/generateRandomNumbers";
 import { Button } from "react-bootstrap";
 import { nanoid } from "nanoid";
+import { filterAnswers } from "../../../../../util/filterAnswers";
 
 export const generateAnswers = (allCharacters, quote, handleClick) => {
-  // get the correct answer
   const correctAnswer = quote.character;
+  const ansArr = filterAnswers(allCharacters);
   // get random indexes then map over them to pull incorrect answers from allCharacters
-  const answersIndexArr = generateRandomNumbers(allCharacters, 3);
-  let answers = answersIndexArr.map((index) => allCharacters[index].name);
+  const answersIndexArr = generateRandomNumbers(ansArr, 3);
+  let answers = answersIndexArr.map((index) => ansArr[index].name);
   // add correct answer and random index
   const randomIndex = Math.floor(Math.random() * (answersIndexArr.length + 1));
   answers.splice(randomIndex, 0, correctAnswer);
 
   const checkAns = (e) => {
-    const selectedAns = e.target.textContent;
+    const selectedAns = e.target.id;
     const isCorrect = selectedAns === correctAnswer ? true : false;
     handleClick(isCorrect);
   };
@@ -22,7 +23,12 @@ export const generateAnswers = (allCharacters, quote, handleClick) => {
     const arr = ans.split(" ");
     const name = arr[0];
     return (
-      <Button key={nanoid()} onClick={checkAns} className="answer">
+      <Button
+        key={nanoid()}
+        onClick={checkAns}
+        className="button answer"
+        id={ans}
+      >
         {name}
       </Button>
     );

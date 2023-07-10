@@ -1,4 +1,4 @@
-export const quoteVariants = {
+export const fadeInVariant = {
   initial: {
     opacity: 0,
     scale: 0.5,

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { filterQuotes } from "../util/filterQuotes";
+import { filterName } from "../util/filterName";
 
 export const useGetBookQuotes = () => {
   const [quotesData, setQuotesData] = useState(null);
@@ -21,7 +22,8 @@ export const useGetBookQuotes = () => {
       .then((response) => response.json())
       .then((data) => {
         // filter out quotes that are to long
-        const modifiedQuotes = filterQuotes(data[quotesKey], length);
+        let modifiedQuotes = filterQuotes(data[quotesKey], length);
+        modifiedQuotes = filterName(modifiedQuotes);
         setQuotesData({ ...data, quotes: modifiedQuotes });
       })
       .catch((error) => {

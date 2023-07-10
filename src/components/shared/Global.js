@@ -1,13 +1,32 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
+
+:root {
+    --red: #991E1F;
+    --black-1: #18181A;
+    --black-2: #212529;
+
+    --grey-1: #9B9D9E;
+    --grey-2: rgba(155, 157, 158, 0.5);
+    --white: #fff;
+}
+
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
     html, 
     body {
         margin: 0;
         padding: 0;
         height: 100%;
-        background-color: #212529;
+        background-color: var(--black-2);
+    }
 
+    p {
+        margin: 0
     }
 
     #root {
@@ -15,75 +34,68 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     .brand {
-        color: #991E1F;
+        color: var(--red);
         font-weight: 700;
         letter-spacing: 1px;
     }
 
     .button {
+        font-size: 1rem;
         background-color: #991E1F !important;
-        border: none;
         color: #212529 !important;
         font-weight: 700;
+        letter-spacing: .5px;
+        border: none;
+
     }
 
     .button:active {
         background-color: #991E1F !important;
-        border: none;
         color: #212529 !important;
         font-weight: 700;
+        border: none;
+
     }
 
     .button:hover {
         opacity: 1;
-        background-color: #991E1F;
+        background-color: var(--red);
         border: none;
-        color: #212529;
+        color: var(--black);
     }
 
     .text-grey {
-        color:  #9B9D9E;
+        color:  var(--grey-1);
+    }
+
+    .text-red {
+        color:  var(--red);
+        font-weight: 700;
+
+    }
+
+    
+
+    .page {
+        min-height: 95%;
+        padding: 3rem 1rem;
+        padding-top: 4rem;
     }
 
     .home {
-        min-height: 95%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        height: 95%
     }
 
-    .pyramid {
-        width: 100%;
-        opacity: 0.8;
-        margin-top: 3rem;
+
+    .grey-border-btm {
+        border-bottom: solid 1px var(--grey-2);
     }
 
-    .answer {
-        width: 45%;
-    }
 
     @media screen and (min-width: 400px){
         .nav-link {
             font-size: 1.15rem;
         }
     }
-    @media screen and (min-width: 1000px){
-       
-        .button {
-            background-color: #991E1F;
-            border: none;
-            color: #212529;
-            font-weight: 700;
-            font-size: 1.15rem;
-            opacity: .5;
-
-        }
-
-        .button:hover {
-            opacity: 1;
-            background-color: #991E1F;
-            border: none;
-            color: #212529;
-        }
-    }
+  
 `;

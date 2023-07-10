@@ -23,8 +23,8 @@ const SearchDropDowns = ({ allCharacters, getCharacterQuotes }) => {
   };
 
   return (
-    <div className="d-flex flex-column justify-content-center align-items-center gap-2">
-      <div className="d-flex flex-row justify-content-center align-items-center gap-2">
+    <div className="d-flex flex-column justify-content-center align-items-center gap-3">
+      <div className="d-flex flex-row justify-content-center align-items-center gap-3">
         <Dropdown
           className="character-selector"
           onSelect={handleCharacterSelect}

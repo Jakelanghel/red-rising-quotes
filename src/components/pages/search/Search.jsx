@@ -1,6 +1,6 @@
 import React from "react";
 import { useGetCharacterQuotes } from "../../../hooks/useGetCharacterQuotes";
-import { generateQuoteElements } from "./generate-quote-elements/generateQuoteElements";
+import { generateQuoteElements } from "./character-quote/generate-quote-elements/generateQuoteElements";
 
 import Page from "../../shared/motion/Page";
 import Title from "./title/Title";
@@ -18,11 +18,13 @@ const Search = ({ allCharacters }) => {
         getCharacterQuotes={getCharacterQuotes}
       />
 
-      <div className="text-white text-center mt-4">
-        <Title quotesData={quotesData} />
-        <Subtitle quotesData={quotesData} />
+      <div className="text-white text-center mt-5 p-1">
+        <div className="grey-border-btm">
+          <Title quotesData={quotesData} />
+          <Subtitle quotesData={quotesData} />
+        </div>
 
-        <div className="container-quote d-flex flex-column gap-5">
+        <div className="container-quote d-flex flex-column gap-5 mt-5">
           {quoteElements}
         </div>
       </div>

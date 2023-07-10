@@ -3,6 +3,7 @@ import { useGetBookQuotes } from "../../../hooks/useGetBookQuotes";
 import GameDropDowns from "./game-drop-downs/GameDropDowns";
 import GameBoard from "./game-board/GameBoard";
 import GameOver from "./game-over/GameOver";
+import Page from "../../shared/motion/Page";
 
 const Game = ({ allCharacters }) => {
   const { quotesData, getBookQuotes } = useGetBookQuotes();
@@ -45,18 +46,22 @@ const Game = ({ allCharacters }) => {
       </h2>
     ) : null;
 
-  const title = !gameState.gameStarted
-    ? "Character Quote Challenge"
-    : "Match the quote to the character";
+  const title = !gameState.gameStarted ? (
+    <h1 className="text-white text-center m-4">Character Quote Challenge</h1>
+  ) : !gameState.gameOver ? (
+    <h1 className="text-white text-center mt-4">
+      Match the quote to the character
+    </h1>
+  ) : null;
 
   return (
-    <>
-      <h1 className="text-white text-center mt-4">{title}</h1>
+    <Page>
+      {title}
       <div className="d-flex flex-column justify-content-center align-items-center gap-2">
         {renderedElements}
         {errorMsg}
       </div>
-    </>
+    </Page>
   );
 };
 

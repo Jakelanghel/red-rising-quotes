@@ -1,6 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
 import { StyledQuoteCard } from "./QuoteCard.Styled";
-import { quoteVariants } from "./quoteVariants";
+import { fadeInVariant } from "../../../shared/motion/fadeInVariants";
+import { AnimatePresence } from "framer-motion";
+
+import FullQuote from "./full-quote/FullQuote";
 
 const QuoteCard = ({ quote, character }) => {
   const containerRef = useRef(null);
@@ -20,29 +23,36 @@ const QuoteCard = ({ quote, character }) => {
     setShowMore((oldState) => !oldState);
   };
 
-  const visibilityClass = showMore ? "show" : "hide";
-  const positionClass = hasOverflow ? "start" : "centered";
-  const buttonTxt = showMore ? "Show Less" : "Show More";
-
-  const readMoreBtn = hasOverflow ? (
-    <button onClick={expandQuote} className="read-more text-grey">
-      {buttonTxt}
-    </button>
-  ) : null;
+  const showMoreBtn =
+    hasOverflow && !showMore ? (
+      <button onClick={expandQuote} className="read-more text-grey">
+        Show More
+      </button>
+    ) : null;
 
   return (
     <StyledQuoteCard
-      variants={quoteVariants}
+      variants={fadeInVariant}
       initial="initial"
       animate="animate"
     >
-      <div className={`${positionClass} ${visibilityClass}`} ref={containerRef}>
-        <p className="quote">{quote}</p>
+      <div className="container-quote" ref={containerRef}>
+        <p className="quote p-2">{quote}</p>
       </div>
 
-      <div className="d-flex justify-content-center m-2">{readMoreBtn}</div>
+      <AnimatePresence>
+        {showMore ? (
+          <FullQuote
+            quote={quote}
+            expandQuote={expandQuote}
+            character={character}
+          />
+        ) : null}
+      </AnimatePresence>
 
-      <p className="character">- {character} -</p>
+      <div className="d-flex justify-content-center m-2">{showMoreBtn}</div>
+
+      <p className="character text-red">- {character} -</p>
     </StyledQuoteCard>
   );
 };

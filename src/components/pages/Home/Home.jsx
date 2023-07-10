@@ -4,7 +4,7 @@ import QuoteCard from "./quote-card/QuoteCard";
 import Button from "react-bootstrap/Button";
 import pyramidImg from "../../../assets/pyramid.png";
 import Page from "../../shared/motion/Page";
-import { animate } from "framer-motion";
+import { StyledHome } from "./Home.Styled";
 
 const Home = () => {
   const { quote, getRandomQuote } = useGetRandomQuote();
@@ -17,29 +17,31 @@ const Home = () => {
     setQuoteKey((prevKey) => prevKey + 1);
     setTimeout(() => {
       setIsButtonDisabled(false);
-    }, 2000);
+    }, 1000);
   };
 
   return (
-    <Page customClass="home">
-      <QuoteCard
-        key={quoteKey}
-        character={quote.character}
-        quote={quote.quote}
-      />
+    <Page customClass={"home"}>
+      <StyledHome>
+        <QuoteCard
+          key={quoteKey}
+          character={quote.character}
+          quote={quote.quote}
+        />
 
-      <Button
-        onClick={handleClick}
-        className="button mt-auto"
-        active
-        disabled={isButtonDisabled}
-      >
-        Get Random Quote
-      </Button>
+        <Button
+          onClick={handleClick}
+          className="button mt-auto"
+          active
+          disabled={isButtonDisabled}
+        >
+          Get Random Quote
+        </Button>
 
-      <div className="container-img">
-        <img className="pyramid" src={pyramidImg} alt="" />
-      </div>
+        <div className="container-img">
+          <img className="pyramid" src={pyramidImg} alt="" />
+        </div>
+      </StyledHome>
     </Page>
   );
 };

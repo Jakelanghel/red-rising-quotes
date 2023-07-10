@@ -20,7 +20,7 @@ const Page = ({ children, customClass }) => {
       variants={pageVariants}
       initial={"initial"}
       animate={"animate"}
-      className={`${customClass} d-flex flex-column align-items-center p-3`}
+      className={`page ${customClass}`}
     >
       {children}
     </motion.div>

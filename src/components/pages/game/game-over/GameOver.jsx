@@ -16,12 +16,15 @@ const GameOver = ({ score, length, setGameState }) => {
   };
 
   return (
-    <div className="text-white text-center mt-4">
-      <h1>Game Over</h1>
+    <div className="text-white text-center mt-5">
+      <h1 className="txt-red">Game Over</h1>
       <h2>
-        You scored a {score} out of {length}
+        You scored a <span className="text-red">{score}</span> out of{" "}
+        <span className="text-red">{length}</span>
       </h2>
-      <Button onClick={handelClick}>Start New Quiz</Button>
+      <Button onClick={handelClick} className="button m-4">
+        Start New Quiz
+      </Button>
     </div>
   );
 };
