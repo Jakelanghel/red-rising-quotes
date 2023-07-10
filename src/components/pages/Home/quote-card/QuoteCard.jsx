@@ -52,7 +52,7 @@ const QuoteCard = ({ quote, character }) => {
 
       <div className="d-flex justify-content-center m-2">{showMoreBtn}</div>
 
-      <p className="character text-red">- {character} -</p>
+      <p className="character text-red m-2">- {character} -</p>
     </StyledQuoteCard>
   );
 };

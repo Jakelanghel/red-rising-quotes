@@ -1,6 +1,5 @@
 import React from "react";
 import { StyledFullQuote } from "./FullQuoteStyled";
-import { fadeInVariant } from "../../../../shared/motion/fadeInVariants";
 
 const FullQuote = ({ quote, expandQuote, character }) => {
   const fullQuoteVariants = {

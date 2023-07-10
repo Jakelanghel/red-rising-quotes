@@ -77,13 +77,13 @@ export const GlobalStyles = createGlobalStyle`
     
 
     .page {
-        min-height: 95%;
-        padding: 3rem 1rem;
+        height: 95%;
+        padding: 1rem 1rem;
         padding-top: 4rem;
     }
 
     .home {
-        height: 95%
+        min-height: 95%
     }
 
 
