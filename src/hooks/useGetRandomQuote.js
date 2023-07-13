@@ -6,19 +6,21 @@ export const useGetRandomQuote = () => {
     character: "Darrow O'Lykos",
   });
 
-  const getRandomQuote = () => {
-    fetch("http://localhost:5000/api/red-rising/random/")
-      .then((response) => response.json())
-      .then((data) => {
-        const newQuote = {
-          quote: data.results[0].text,
-          character: data.results[0].character,
-        };
-        setQuote(newQuote);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  const getRandomQuote = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:5000/api/red-rising/random/"
+      );
+      const data = await response.json();
+
+      const newQuote = {
+        quote: data.results[0].text,
+        character: data.results[0].character,
+      };
+      setQuote(newQuote);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return { quote, getRandomQuote };

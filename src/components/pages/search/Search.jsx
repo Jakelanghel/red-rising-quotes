@@ -8,8 +8,23 @@ import Subtitle from "./subtitle/Subtitle";
 import SearchDropDowns from "./search-drop-downs/SearchDropDowns";
 
 const Search = ({ allCharacters }) => {
-  const { quotesData, getCharacterQuotes } = useGetCharacterQuotes();
+  const { quotesData, isLoading, getCharacterQuotes } = useGetCharacterQuotes();
   const quoteElements = generateQuoteElements(quotesData);
+
+  const renderedContent = isLoading ? (
+    <h1>Loading. . . </h1>
+  ) : (
+    <div className="text-white text-center mt-5 p-1">
+      <div className="grey-border-btm">
+        <Title quotesData={quotesData} />
+        <Subtitle quotesData={quotesData} />
+      </div>
+
+      <div className="container-quote d-flex flex-column gap-5 mt-5">
+        {quoteElements}
+      </div>
+    </div>
+  );
 
   return (
     <Page>
@@ -17,17 +32,7 @@ const Search = ({ allCharacters }) => {
         allCharacters={allCharacters}
         getCharacterQuotes={getCharacterQuotes}
       />
-
-      <div className="text-white text-center mt-5 p-1">
-        <div className="grey-border-btm">
-          <Title quotesData={quotesData} />
-          <Subtitle quotesData={quotesData} />
-        </div>
-
-        <div className="container-quote d-flex flex-column gap-5 mt-5">
-          {quoteElements}
-        </div>
-      </div>
+      {renderedContent}
     </Page>
   );
 };

@@ -4,15 +4,19 @@ export const useGetBooks = () => {
   const [allBooks, setAllBooks] = useState([]);
 
   useEffect(() => {
-    try {
-      fetch("http://localhost:5000/api/red-rising/books/")
-        .then((res) => res.json())
-        .then((data) => {
-          setAllBooks(data.results);
-        });
-    } catch (error) {
-      console.log(error);
-    }
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:5000/api/red-rising/books/"
+        );
+        const data = await response.json();
+        setAllBooks(data.results);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   return allBooks;
