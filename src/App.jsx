@@ -5,7 +5,7 @@ import Router from "./components/router/Router";
 
 function App() {
   return (
-    <div className="h-100">
+    <div className="app h-100">
       <GlobalStyles />
       <Navigation />
       <Router />

@@ -34,7 +34,7 @@ const GameDropDowns = (props) => {
   };
 
   return (
-    <div className="d-flex flex-column justify-content-center align-items-center gap-2">
+    <div className="d-flex flex-column justify-content-center align-items-center gap-2 mt-3">
       <div className="d-flex flex-row justify-content-center align-items-center gap-2">
         <Dropdown onSelect={handleBookSelect}>
           <Dropdown.Toggle

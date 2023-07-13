@@ -37,7 +37,7 @@ const QuoteCard = ({ quote, character }) => {
       animate="animate"
     >
       <div className="container-quote" ref={containerRef}>
-        <p className="quote p-2">{quote}</p>
+        <p className="quote">{quote}</p>
       </div>
 
       <AnimatePresence>

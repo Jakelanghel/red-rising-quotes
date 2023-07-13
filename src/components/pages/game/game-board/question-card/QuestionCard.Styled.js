@@ -8,9 +8,6 @@ export const StyledQuestionCard = styled(motion.div)`
   justify-content: space-around;
   align-items: center;
   gap: 5rem;
-  margin-top: 3rem;
-
-  /* border: solid 1px white; */
 
   .question {
     border-top: solid 1px grey;

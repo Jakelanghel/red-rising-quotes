@@ -47,11 +47,9 @@ const Game = ({ allCharacters }) => {
     ) : null;
 
   const title = !gameState.gameStarted ? (
-    <h1 className="text-white text-center m-4">Character Quote Challenge</h1>
+    <h1 className="text-white text-center">Character Quote Challenge</h1>
   ) : !gameState.gameOver ? (
-    <h1 className="text-white text-center mt-4">
-      Match the quote to the character
-    </h1>
+    <h1 className="text-white text-center">Match the quote to the character</h1>
   ) : null;
 
   return (

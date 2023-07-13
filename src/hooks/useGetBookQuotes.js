@@ -22,6 +22,7 @@ export const useGetBookQuotes = () => {
       .then((response) => response.json())
       .then((data) => {
         // filter out quotes that are to long
+        console.log(data[quotesKey]);
         let modifiedQuotes = filterQuotes(data[quotesKey], length);
         modifiedQuotes = filterName(modifiedQuotes);
         setQuotesData({ ...data, quotes: modifiedQuotes });

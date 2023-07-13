@@ -22,7 +22,10 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
         height: 100%;
+        color: var(--white);
         background-color: var(--black-2);
+        text-align: center;
+
     }
 
     p {
@@ -74,16 +77,10 @@ export const GlobalStyles = createGlobalStyle`
 
     }
 
-    
-
     .page {
         height: 95%;
         padding: 1rem 1rem;
         padding-top: 4rem;
-    }
-
-    .home {
-        min-height: 95%
     }
 
 
@@ -92,10 +89,6 @@ export const GlobalStyles = createGlobalStyle`
     }
 
 
-    @media screen and (min-width: 400px){
-        .nav-link {
-            font-size: 1.15rem;
-        }
-    }
+    
   
 `;

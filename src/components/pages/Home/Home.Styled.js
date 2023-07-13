@@ -8,11 +8,15 @@ export const StyledHome = styled.main`
   align-items: center;
   position: relative;
 
+  .button {
+    margin-top: auto;
+  }
+
   .pyramid {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
-    margin-top: 3rem;
+    margin-top: 5rem;
     opacity: 0.8;
   }
 `;

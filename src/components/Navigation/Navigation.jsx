@@ -1,9 +1,10 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { StyledNavigation } from "./Navigation.Styled";
 
 function Navigation() {
   return (
-    <>
+    <StyledNavigation>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
           <Navbar.Brand as={Link} to="/" className="brand fs-4">
@@ -22,7 +23,7 @@ function Navigation() {
           </Nav>
         </Container>
       </Navbar>
-    </>
+    </StyledNavigation>
   );
 }
 

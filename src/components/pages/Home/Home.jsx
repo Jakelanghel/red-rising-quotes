@@ -21,7 +21,7 @@ const Home = () => {
   };
 
   return (
-    <Page customClass={"home"}>
+    <Page>
       <StyledHome>
         <QuoteCard
           key={quoteKey}
@@ -31,7 +31,7 @@ const Home = () => {
 
         <Button
           onClick={handleClick}
-          className="button mt-auto"
+          className="button"
           active
           disabled={isButtonDisabled}
         >

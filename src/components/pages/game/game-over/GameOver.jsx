@@ -1,5 +1,7 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { StyledGameOver } from "./GameOver.Styled";
+import { fadeInVariant } from "../../../shared/motion/fadeInVariants";
 
 const GameOver = ({ score, length, setGameState }) => {
   const handelClick = () => {
@@ -16,16 +18,20 @@ const GameOver = ({ score, length, setGameState }) => {
   };
 
   return (
-    <div className="text-white text-center mt-5">
-      <h1 className="txt-red">Game Over</h1>
+    <StyledGameOver
+      variants={fadeInVariant}
+      initial="initial"
+      animate="animate"
+    >
+      <h1>Game Over</h1>
       <h2>
-        You scored a <span className="text-red">{score}</span> out of{" "}
-        <span className="text-red">{length}</span>
+        You scored a <span className="score">{score}</span> out of
+        <span className="score"> {length}</span>
       </h2>
       <Button onClick={handelClick} className="button m-4">
         Start New Quiz
       </Button>
-    </div>
+    </StyledGameOver>
   );
 };
 
