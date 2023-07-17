@@ -1,5 +1,6 @@
 import React from "react";
 import { generateQuestions } from "../generate-questions/generateQuestions";
+import { StyledGameBoard } from "./GameBoard.Styled";
 
 const GameBoard = ({ gameState, setGameState, allCharacters, quotesData }) => {
   const handleClick = (isCorrect) => {
@@ -24,7 +25,11 @@ const GameBoard = ({ gameState, setGameState, allCharacters, quotesData }) => {
     ? questionElements[gameState.currentQuestion]
     : null;
 
-  return <div className="text-grey text-center p-2">{question}</div>;
+  return (
+    <StyledGameBoard className="text-grey text-center p-2">
+      {question}
+    </StyledGameBoard>
+  );
 };
 
 export default GameBoard;

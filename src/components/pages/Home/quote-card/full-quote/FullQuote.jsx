@@ -26,11 +26,16 @@ const FullQuote = ({ quote, expandQuote, character }) => {
       animate="animate"
       exit="exit"
     >
-      <p className="quote">{quote}</p>
-      <button onClick={expandQuote} className="read-more text-grey">
+      <button onClick={expandQuote} className="show-more text-grey">
         Show Less
       </button>
+
       <p className="character text-red">- {character} -</p>
+
+      <p className="quote">{quote}</p>
+      <button onClick={expandQuote} className="show-more text-grey">
+        Show Less
+      </button>
     </StyledFullQuote>
   );
 };

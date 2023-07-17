@@ -16,7 +16,7 @@ export const StyledHome = styled.main`
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
-    margin-top: 5rem;
+    margin-top: 2rem;
     opacity: 0.8;
   }
 `;

@@ -6,7 +6,6 @@ export const GlobalStyles = createGlobalStyle`
     --red: #991E1F;
     --black-1: #18181A;
     --black-2: #212529;
-
     --grey-1: #9B9D9E;
     --grey-2: rgba(155, 157, 158, 0.5);
     --white: #fff;
@@ -15,6 +14,7 @@ export const GlobalStyles = createGlobalStyle`
     * {
         padding: 0;
         margin: 0;
+        box-sizing: border-box;
     }
     
     html, 
@@ -47,7 +47,6 @@ export const GlobalStyles = createGlobalStyle`
         background-color: #991E1F !important;
         color: #212529 !important;
         font-weight: 700;
-        letter-spacing: .5px;
         border: none;
 
     }
@@ -57,7 +56,6 @@ export const GlobalStyles = createGlobalStyle`
         color: #212529 !important;
         font-weight: 700;
         border: none;
-
     }
 
     .button:hover {
@@ -80,15 +78,18 @@ export const GlobalStyles = createGlobalStyle`
     .page {
         height: 95%;
         padding: 1rem 1rem;
-        padding-top: 4rem;
+        padding-top: 2rem;
     }
 
-
-    .grey-border-btm {
-        border-bottom: solid 1px var(--grey-2);
+    .search-page {
+        height: auto;    
     }
 
-
+    @media screen and (min-width: 700px) {
+        .page {
+            padding-top: 6rem
+        }
+    }
     
   
 `;

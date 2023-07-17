@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import { scrollToTop } from "../../../../util/scrollToTop";
 import { StyledQuoteCard } from "./QuoteCard.Styled";
 import { fadeInVariant } from "../../../shared/motion/fadeInVariants";
-import { AnimatePresence } from "framer-motion";
-
 import FullQuote from "./full-quote/FullQuote";
 
 const QuoteCard = ({ quote, character }) => {
@@ -19,16 +19,24 @@ const QuoteCard = ({ quote, character }) => {
     }
   }, [quote]);
 
+  useEffect(() => {
+    if (!showMore) {
+      scrollToTop();
+    }
+  }, [showMore]);
+
   const expandQuote = () => {
     setShowMore((oldState) => !oldState);
   };
 
   const showMoreBtn =
     hasOverflow && !showMore ? (
-      <button onClick={expandQuote} className="read-more text-grey">
+      <button onClick={expandQuote} className="show-more text-grey visible">
         Show More
       </button>
     ) : null;
+
+  const quoteClass = hasOverflow ? "lrg-quote" : "sml-quote";
 
   return (
     <StyledQuoteCard
@@ -36,10 +44,6 @@ const QuoteCard = ({ quote, character }) => {
       initial="initial"
       animate="animate"
     >
-      <div className="container-quote" ref={containerRef}>
-        <p className="quote">{quote}</p>
-      </div>
-
       <AnimatePresence>
         {showMore ? (
           <FullQuote
@@ -50,9 +54,15 @@ const QuoteCard = ({ quote, character }) => {
         ) : null}
       </AnimatePresence>
 
-      <div className="d-flex justify-content-center m-2">{showMoreBtn}</div>
+      <div className="container-quote" ref={containerRef}>
+        <p className={`quote ${quoteClass}`}>{quote}</p>
+      </div>
 
-      <p className="character text-red m-2">- {character} -</p>
+      <div className="container-show-more d-flex justify-content-center">
+        {showMoreBtn}
+      </div>
+
+      <p className="character text-red">- {character} -</p>
     </StyledQuoteCard>
   );
 };

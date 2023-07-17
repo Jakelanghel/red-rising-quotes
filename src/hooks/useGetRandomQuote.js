@@ -12,12 +12,7 @@ export const useGetRandomQuote = () => {
         "http://localhost:5000/api/red-rising/random/"
       );
       const data = await response.json();
-
-      const newQuote = {
-        quote: data.results[0].text,
-        character: data.results[0].character,
-      };
-      setQuote(newQuote);
+      setQuote(data);
     } catch (error) {
       console.log(error);
     }

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledNavigation = styled.nav`
-  max-width: 950px;
+  max-width: 850px;
   margin: 0 auto;
 
   @media screen and (min-width: 400px) {

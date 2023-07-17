@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useGetBookQuotes } from "../../../hooks/useGetBookQuotes";
+import { PuffLoader } from "react-spinners";
 import GameDropDowns from "./game-drop-downs/GameDropDowns";
 import GameBoard from "./game-board/GameBoard";
 import GameOver from "./game-over/GameOver";
 import Page from "../../shared/motion/Page";
 
 const Game = ({ allCharacters }) => {
-  const { quotesData, getBookQuotes } = useGetBookQuotes();
-
+  const { quotesData, getBookQuotes, isLoading } = useGetBookQuotes();
+  console.log(isLoading);
   const [gameState, setGameState] = useState({
     gameStarted: false,
     gameOver: false,
@@ -18,7 +19,11 @@ const Game = ({ allCharacters }) => {
     score: 0,
   });
 
-  const renderedElements = !gameState.gameStarted ? (
+  console.log(gameState);
+
+  const renderedElements = isLoading ? (
+    <PuffLoader color="#991E1F" size={100} />
+  ) : !gameState.gameStarted ? (
     <GameDropDowns
       gameState={gameState}
       setGameState={setGameState}

@@ -15,6 +15,7 @@ export const useGetCharacterNames = () => {
         console.log(error);
       }
     };
+    fetchData();
   }, []);
 
   return allCharacters;

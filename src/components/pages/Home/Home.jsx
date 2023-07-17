@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { useGetRandomQuote } from "../../../hooks/useGetRandomQuote";
+import { StyledHome } from "./Home.Styled";
 import QuoteCard from "./quote-card/QuoteCard";
-import Button from "react-bootstrap/Button";
 import pyramidImg from "../../../assets/pyramid.png";
 import Page from "../../shared/motion/Page";
-import { StyledHome } from "./Home.Styled";
+import Button from "react-bootstrap/Button";
 
 const Home = () => {
-  const { quote, getRandomQuote } = useGetRandomQuote();
   const [quoteKey, setQuoteKey] = useState(0);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+  const { quote, getRandomQuote } = useGetRandomQuote();
 
-  const handleClick = (e) => {
+  const handleClick = () => {
     setIsButtonDisabled(true);
     getRandomQuote();
     setQuoteKey((prevKey) => prevKey + 1);

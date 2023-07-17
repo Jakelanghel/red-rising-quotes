@@ -1,9 +1,9 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import { useGetCharacterNames } from "../../hooks/useGetCharacterNames";
 import Home from "../pages/Home/Home";
 import Search from "../pages/search/Search";
 import Game from "../pages/game/Game";
-import { useGetCharacterNames } from "../../hooks/useGetCharacterNames";
 
 function Router() {
   const allCharacters = useGetCharacterNames();

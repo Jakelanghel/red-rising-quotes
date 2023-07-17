@@ -4,19 +4,29 @@ import { motion } from "framer-motion";
 export const StyledQuoteCard = styled(motion.div)`
   width: 100%;
 
-  .start {
-    display: flex;
-  }
-
   .container-quote {
     max-height: 150px;
+    height: 150px;
     overflow: hidden;
   }
 
-  .read-more {
+  .show-more {
     border: none;
     background-color: transparent;
     padding: 0.75rem 1.5rem;
+  }
+
+  .hidden {
+    opacity: 0;
+  }
+
+  .hidden:hover {
+    cursor: default;
+  }
+
+  .container-quote {
+    max-width: 350px;
+    margin: 0 auto;
   }
 
   .quote,
@@ -28,10 +38,19 @@ export const StyledQuoteCard = styled(motion.div)`
   }
 
   .quote {
-    max-width: 350px;
-    margin: 0 auto;
+    height: 100%;
+    display: flex;
     font-size: 1.5rem;
     color: #fff;
+    /* border: solid 1px red; */
+  }
+
+  .sml-quote {
+    align-items: center;
+  }
+
+  .lrg-quote {
+    align-items: flex-start;
   }
 
   .character {
@@ -39,13 +58,13 @@ export const StyledQuoteCard = styled(motion.div)`
   }
 
   @media screen and (min-width: 600px) {
-    .quote {
-      max-width: 500px;
-    }
+    /* .quote {
+      max-width: 450px;
+    } */
   }
-  @media screen and (min-width: 1000px) {
+  /* @media screen and (min-width: 1000px) {
     .quote {
       max-width: 700px;
     }
-  }
+  } */
 `;

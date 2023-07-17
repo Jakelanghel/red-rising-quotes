@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { getQuotes } from "../util/getQuotes";
 
 export const useGetCharacterQuotes = () => {
   const [quotesData, setQuotesData] = useState(null);
@@ -9,14 +8,16 @@ export const useGetCharacterQuotes = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `http://localhost:5000/api/red-rising/character-quotes/?slug=${character}`
+        `http://localhost:5000/api/red-rising/character-quotes/?slug=${character}&quantity=${quantity}`
       );
       const data = await response.json();
-      getQuotes(data, setQuotesData, quantity);
+      setQuotesData(data);
     } catch (error) {
       console.log(error);
     } finally {
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
     }
   };
 

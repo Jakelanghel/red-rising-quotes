@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 
 export const StyledQuestionCard = styled(motion.div)`
   min-height: 95%;
+  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
   gap: 5rem;
 
   .question {

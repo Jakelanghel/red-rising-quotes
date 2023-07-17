@@ -1,7 +1,8 @@
 import React from "react";
+import { PuffLoader } from "react-spinners";
 import { useGetCharacterQuotes } from "../../../hooks/useGetCharacterQuotes";
 import { generateQuoteElements } from "./character-quote/generate-quote-elements/generateQuoteElements";
-
+import { StyledSearch } from "./Search.Styled";
 import Page from "../../shared/motion/Page";
 import Title from "./title/Title";
 import Subtitle from "./subtitle/Subtitle";
@@ -12,27 +13,29 @@ const Search = ({ allCharacters }) => {
   const quoteElements = generateQuoteElements(quotesData);
 
   const renderedContent = isLoading ? (
-    <h1>Loading. . . </h1>
+    <div className="container-loader">
+      <PuffLoader color="#991E1F" size={100} />
+    </div>
   ) : (
     <div className="text-white text-center mt-5 p-1">
-      <div className="grey-border-btm">
+      <div className="container-title">
         <Title quotesData={quotesData} />
         <Subtitle quotesData={quotesData} />
       </div>
 
-      <div className="container-quote d-flex flex-column gap-5 mt-5">
-        {quoteElements}
-      </div>
+      <div className="container-quotes ">{quoteElements}</div>
     </div>
   );
 
   return (
     <Page>
-      <SearchDropDowns
-        allCharacters={allCharacters}
-        getCharacterQuotes={getCharacterQuotes}
-      />
-      {renderedContent}
+      <StyledSearch>
+        <SearchDropDowns
+          allCharacters={allCharacters}
+          getCharacterQuotes={getCharacterQuotes}
+        />
+        {renderedContent}
+      </StyledSearch>
     </Page>
   );
 };
