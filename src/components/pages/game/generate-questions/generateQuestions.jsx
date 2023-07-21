@@ -8,7 +8,7 @@ export const generateQuestions = (allCharacters, quotesData, handleClick) => {
     return null;
   }
 
-  return quotesData.quotes.map((quote) => {
+  return quotesData.map((quote) => {
     const answerElements = generateAnswers(allCharacters, quote, handleClick);
     return (
       <QuestionCard

@@ -5,7 +5,7 @@ import { Button } from "react-bootstrap";
 import { useGetBooks } from "../../../../hooks/useGetBooks";
 
 const GameDropDowns = (props) => {
-  const { gameState, setGameState, getBookQuotes } = props;
+  const { gameState, setGameState, fetchData } = props;
   const allBooks = useGetBooks();
 
   const handleBookSelect = (eventKey) => {
@@ -19,7 +19,9 @@ const GameDropDowns = (props) => {
 
   const startGame = () => {
     if (gameState.selectedBook && gameState.length) {
-      getBookQuotes(gameState.selectedBook, gameState.length);
+      fetchData(
+        `http://localhost:5000/api/red-rising/game/?slug=${gameState.selectedBook}&length=${gameState.length}`
+      );
       setGameState((oldState) => ({
         ...oldState,
         error: false,

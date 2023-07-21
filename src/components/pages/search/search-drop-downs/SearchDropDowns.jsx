@@ -3,7 +3,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import NamesDropDown from "./names-drop-down/NamesDropDown";
 import { Button } from "react-bootstrap";
 
-const SearchDropDowns = ({ allCharacters, getCharacterQuotes }) => {
+const SearchDropDowns = ({ allCharacters, fetchData }) => {
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [length, setLength] = useState("all");
 
@@ -16,7 +16,9 @@ const SearchDropDowns = ({ allCharacters, getCharacterQuotes }) => {
 
   const handleSubmit = () => {
     if (selectedCharacter) {
-      getCharacterQuotes(selectedCharacter, length);
+      fetchData(
+        `http://localhost:5000/api/red-rising/character-quotes/?slug=${selectedCharacter}&quantity=${length}`
+      );
     } else {
       console.log("Please select a character");
     }

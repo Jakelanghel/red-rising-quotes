@@ -28,6 +28,10 @@ export const GlobalStyles = createGlobalStyle`
 
     }
 
+    .error-msg {
+        margin-top: 1rem;
+    }
+
     p {
         margin: 0
     }
