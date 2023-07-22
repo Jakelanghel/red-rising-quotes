@@ -4,7 +4,6 @@ import { useGetCharacterNames } from "../../hooks/useGetCharacterNames";
 import Home from "../pages/Home/Home";
 import Search from "../pages/search/Search";
 import Game from "../pages/game/Game";
-import { useFetch } from "../../hooks/useFetch";
 
 function Router() {
   const allCharacters = useGetCharacterNames();

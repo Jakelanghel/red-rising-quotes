@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledFullQuote } from "./FullQuoteStyled";
+import { StyledFullQuote } from "./FullQuote.Styled";
 
 const FullQuote = ({ quote, expandQuote, character }) => {
   const fullQuoteVariants = {
@@ -32,7 +32,9 @@ const FullQuote = ({ quote, expandQuote, character }) => {
 
       <p className="character text-red">- {character} -</p>
 
-      <p className="quote">{quote}</p>
+      <div className="container-quote">
+        <p className="quote">{quote}</p>
+      </div>
       <button onClick={expandQuote} className="show-more text-grey">
         Show Less
       </button>

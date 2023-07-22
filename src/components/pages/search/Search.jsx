@@ -1,41 +1,46 @@
-import React from "react";
-import { PuffLoader } from "react-spinners";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { useFetch } from "../../../hooks/useFetch";
-import { generateQuoteElements } from "./character-quote/generate-quote-elements/generateQuoteElements";
+import { generateQuoteElements } from "./generate-quote-elements/generateQuoteElements";
 import { StyledSearch } from "./Search.Styled";
 import ErrorMsg from "../../shared/error/ErrorMsg";
-import Page from "../../shared/motion/Page";
-import Title from "./title/Title";
-import Subtitle from "./subtitle/Subtitle";
+import Page from "../../shared/motion/components/Page";
+import SearchContent from "./search-content/SearchContent";
 import SearchDropDowns from "./search-drop-downs/SearchDropDowns";
 
 const Search = ({ allCharacters }) => {
   const { data, fetchData, isLoading, apiError, apiErrorMsg } = useFetch();
   const quoteElements = generateQuoteElements(data);
+  const [isWobbling, setIsWobbling] = useState(false);
 
-  const renderedContent = isLoading ? (
-    <div className="container-loader">
-      <PuffLoader color="#991E1F" size={100} />
-    </div>
-  ) : (
-    <div className="text-white text-center mt-5 p-1">
-      <div className="container-title">
-        <Title quotesData={data} />
-        <Subtitle quotesData={data} />
-      </div>
-
-      <div className="container-quotes ">{quoteElements}</div>
-    </div>
-  );
-
-  const error = apiError ? <ErrorMsg error={apiErrorMsg} /> : null;
+  const wobble = () => {
+    setIsWobbling(true);
+    setTimeout(() => setIsWobbling(false), 1000);
+  };
 
   return (
-    <Page>
+    <Page customClass="search-page">
       <StyledSearch>
-        <SearchDropDowns allCharacters={allCharacters} fetchData={fetchData} />
-        {error}
-        {renderedContent}
+        <SearchDropDowns
+          allCharacters={allCharacters}
+          fetchData={fetchData}
+          wobble={wobble}
+        />
+        <ErrorMsg apiError={apiError} error={apiErrorMsg} />
+
+        <motion.div
+          className="wobble-div"
+          animate={{
+            rotate: isWobbling ? [0, -3, 3, -2, 2, -1, 1, 0] : 0,
+          }}
+          transition={{ duration: 1.15 }}
+        >
+          <SearchContent
+            isLoading={isLoading}
+            data={data}
+            quoteElements={quoteElements}
+          />
+        </motion.div>
       </StyledSearch>
     </Page>
   );

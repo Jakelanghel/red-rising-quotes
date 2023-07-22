@@ -3,10 +3,16 @@ import { motion } from "framer-motion";
 
 export const StyledQuoteCard = styled(motion.div)`
   width: 100%;
+  max-width: 425px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  padding: 0.5rem;
 
   .container-quote {
-    max-height: 150px;
-    height: 150px;
+    height: 215px;
     overflow: hidden;
   }
 
@@ -25,7 +31,7 @@ export const StyledQuoteCard = styled(motion.div)`
   }
 
   .container-quote {
-    max-width: 350px;
+    max-width: 400px;
     margin: 0 auto;
   }
 
@@ -40,7 +46,9 @@ export const StyledQuoteCard = styled(motion.div)`
   .quote {
     height: 100%;
     display: flex;
-    font-size: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
     color: #fff;
     /* border: solid 1px red; */
   }
@@ -57,14 +65,20 @@ export const StyledQuoteCard = styled(motion.div)`
     font-size: 1.5rem;
   }
 
-  @media screen and (min-width: 600px) {
-    /* .quote {
-      max-width: 450px;
-    } */
+  .quote-info {
+    width: 100%;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
   }
-  /* @media screen and (min-width: 1000px) {
-    .quote {
-      max-width: 700px;
+
+  @media screen and (min-width: 800px) {
+    .container-quote {
+      max-width: 600px;
     }
-  } */
+    .quote {
+      font-size: 1.5rem;
+    }
+  }
 `;

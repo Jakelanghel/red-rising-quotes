@@ -4,7 +4,7 @@ import { useFetch } from "../../../hooks/useFetch";
 import GameDropDowns from "./game-drop-downs/GameDropDowns";
 import GameBoard from "./game-board/GameBoard";
 import GameOver from "./game-over/GameOver";
-import Page from "../../shared/motion/Page";
+import Page from "../../shared/motion/components/Page";
 
 const Game = ({ allCharacters }) => {
   const { data, fetchData, isLoading, apiError, apiErrorMsg } = useFetch();

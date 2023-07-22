@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useFetch } from "../../../hooks/useFetch";
 import { StyledHome } from "./Home.Styled";
-import Page from "../../shared/motion/Page";
-import QuoteCard from "./quote-card/QuoteCard";
+import Page from "../../shared//motion/components/Page";
+import QuoteCard from "../../shared/quote-card/QuoteCard";
 import Button from "react-bootstrap/Button";
 import pyramidImg from "../../../assets/pyramid.png";
 import ErrorMsg from "../../shared/error/ErrorMsg";
@@ -22,22 +22,27 @@ const Home = () => {
   };
 
   const error = apiError ? <ErrorMsg error={apiErrorMsg} /> : null;
-  const buttonDisabled = isButtonDisabled ? true : apiError ? true : false;
+  const buttonDisabled = isButtonDisabled || apiError;
 
-  const quoteData = !data
-    ? {
-        quote: "I would have lived in peace. But my enemies brought me war.",
-        character: "Darrow O'Lykos",
-      }
-    : data;
+  const quoteData = data || {
+    book: "Red Rising",
+    quote: "I would have lived in peace. But my enemies brought me war.",
+    character: "Darrow O'Lykos",
+    chapterNumber: 0,
+    chapterName: "Prolog",
+  };
 
   return (
     <Page>
       <StyledHome>
         <QuoteCard
           key={quoteKey}
+          book={quoteData.book}
           character={quoteData.character}
           quote={quoteData.quote}
+          chapterNumber={quoteData.chapterNumber}
+          chapterName={quoteData.chapterName}
+          parentComponent={"home"}
         />
 
         {error}

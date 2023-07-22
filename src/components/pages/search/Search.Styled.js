@@ -5,6 +5,7 @@ export const StyledSearch = styled.div`
   flex-direction: column;
   align-items: center;
   height: 100%;
+  position: relative;
 
   .container-title {
     max-width: 500px;
@@ -25,7 +26,16 @@ export const StyledSearch = styled.div`
   .container-loader {
     display: flex;
     align-items: center;
-    height: 50%;
+    height: 60%;
+  }
+
+  .search-quote {
+    border: solid 2px var(--grey-2);
+    padding: 1rem 2rem;
+  }
+
+  .wobble-div {
+    height: 100%;
   }
 
   @media screen and (min-width: 600px) {
@@ -34,7 +44,7 @@ export const StyledSearch = styled.div`
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
-      /* align-items: center; */
+      align-items: center;
       gap: 2rem;
       margin-top: 2rem;
     }

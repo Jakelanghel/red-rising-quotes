@@ -80,20 +80,15 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     .page {
-        height: 95%;
-        padding: 1rem 1rem;
+        height: 92%;
+        padding: 0 1rem;
         padding-top: 2rem;
     }
 
     .search-page {
-        height: auto;    
+        min-height: 92%;    
     }
 
-    @media screen and (min-width: 700px) {
-        .page {
-            padding-top: 6rem
-        }
-    }
     
   
 `;

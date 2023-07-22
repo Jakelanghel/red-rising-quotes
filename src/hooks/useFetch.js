@@ -24,7 +24,9 @@ export const useFetch = () => {
       setErrorMsg("Something went wrong with the API. Please try again later.");
       console.error(error);
     } finally {
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
     }
   };
 

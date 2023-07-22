@@ -10,13 +10,7 @@ export const StyledNavigation = styled.nav`
     }
   }
 
-  @media screen and (min-width: 992px) {
-    .nav-link {
-      font-size: 1.15rem;
-    }
-  }
-
-  @media screen and (min-width: 775px) {
+  @media screen and (min-width: 800px) {
     .nav-link {
       margin-left: 1.5rem;
     }
