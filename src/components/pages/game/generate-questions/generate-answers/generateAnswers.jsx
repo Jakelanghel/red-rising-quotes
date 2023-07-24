@@ -23,12 +23,7 @@ export const generateAnswers = (allCharacters, quote, handleClick) => {
     const arr = ans.split(" ");
     const name = arr[0];
     return (
-      <Button
-        key={nanoid()}
-        onClick={checkAns}
-        className="button answer"
-        id={ans}
-      >
+      <Button key={nanoid()} onClick={checkAns} className="answer" id={ans}>
         {name}
       </Button>
     );

@@ -10,19 +10,15 @@ import { renderChapterInfo } from "./render/renderChapterInfo";
 import FullQuote from "./full-quote/FullQuote";
 
 const QuoteCard = ({
-  book,
-  character,
-  quote,
-  chapterData,
+  book = null,
+  character = null,
+  quote = null,
+  chapterData = null,
   parentComponent = null,
 }) => {
   const containerRef = useRef(null);
   const [showMore, setShowMore] = useState(false);
   const hasOverflow = useHasOverFlow(containerRef, quote);
-
-  useEffect(() => {
-    scrollToTop();
-  }, [showMore]);
 
   const expandQuote = () => {
     setShowMore((oldState) => !oldState);
@@ -32,6 +28,8 @@ const QuoteCard = ({
   const name = renderName(parentComponent, character);
   const chapterInfo = renderChapterInfo(parentComponent, book, chapterData);
   const quoteClass = hasOverflow ? "lrg-quote" : "sml-quote";
+  const containerClass =
+    parentComponent === "game" ? "container-game-quote" : "container-quote";
 
   return (
     <StyledQuoteCard
@@ -40,17 +38,13 @@ const QuoteCard = ({
       animate="animate"
       className={parentComponent === "search" ? "search-quote" : null}
     >
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {showMore ? (
-          <FullQuote
-            quote={quote}
-            expandQuote={expandQuote}
-            character={character}
-          />
+          <FullQuote quote={quote} expandQuote={expandQuote} character={name} />
         ) : null}
       </AnimatePresence>
 
-      <div className="container-quote" ref={containerRef}>
+      <div className={containerClass} ref={containerRef}>
         <p className={`quote ${quoteClass}`}>{quote}</p>
       </div>
 

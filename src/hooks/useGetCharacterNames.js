@@ -7,7 +7,7 @@ export const useGetCharacterNames = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/red-rising/characters/"
+          "https://dynamic-api-proxy.onrender.com/api/red-rising/characters/"
         );
         const data = await response.json();
         setCharacters(data.results);

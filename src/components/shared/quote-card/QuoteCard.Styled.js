@@ -4,15 +4,17 @@ import { motion } from "framer-motion";
 export const StyledQuoteCard = styled(motion.div)`
   width: 100%;
   max-width: 425px;
-  height: 350px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   border-radius: 15px;
-  padding: 0.5rem;
 
   .container-quote {
     height: 215px;
+    overflow: hidden;
+  }
+
+  .container-game-quote {
+    height: 275px;
     overflow: hidden;
   }
 
@@ -50,7 +52,9 @@ export const StyledQuoteCard = styled(motion.div)`
     align-items: center;
     font-size: 1.25rem;
     color: #fff;
-    /* border: solid 1px red; */
+  }
+
+  .game-quote {
   }
 
   .sml-quote {
@@ -67,10 +71,15 @@ export const StyledQuoteCard = styled(motion.div)`
 
   .quote-info {
     width: 100%;
-    margin-top: auto;
+    margin-top: 1rem;
     display: flex;
     justify-content: space-between;
     gap: 1rem;
+  }
+
+  .book-txt,
+  .chapter-txt {
+    font-size: 0.85rem;
   }
 
   @media screen and (min-width: 800px) {

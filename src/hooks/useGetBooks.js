@@ -7,7 +7,7 @@ export const useGetBooks = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/red-rising/books/"
+          "https://dynamic-api-proxy.onrender.com/api/red-rising/books/"
         );
         const data = await response.json();
         setAllBooks(data.results);

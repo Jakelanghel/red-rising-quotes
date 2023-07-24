@@ -31,7 +31,7 @@ export const StyledSearch = styled.div`
 
   .search-quote {
     border: solid 2px var(--grey-2);
-    padding: 1rem 2rem;
+    padding: 1.25rem;
   }
 
   .wobble-div {

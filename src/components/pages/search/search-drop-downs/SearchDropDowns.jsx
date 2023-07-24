@@ -17,7 +17,7 @@ const SearchDropDowns = ({ allCharacters, fetchData, wobble }) => {
   const handleSubmit = () => {
     if (selectedCharacter) {
       fetchData(
-        `http://localhost:5000/api/red-rising/character-quotes/?slug=${selectedCharacter}&quantity=${length}`
+        `https://dynamic-api-proxy.onrender.com/api/red-rising/character-quotes/?slug=${selectedCharacter}&quantity=${length}`
       );
     } else {
       wobble();

@@ -14,7 +14,7 @@ const Home = () => {
 
   const handleClick = () => {
     setIsButtonDisabled(true);
-    fetchData("http://localhost:5000/api/red-rising/random/");
+    fetchData("https://dynamic-api-proxy.onrender.com/api/red-rising/random/");
     setQuoteKey((prevKey) => prevKey + 1);
     setTimeout(() => {
       setIsButtonDisabled(false);

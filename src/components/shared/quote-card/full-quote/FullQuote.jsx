@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StyledFullQuote } from "./FullQuote.Styled";
 
 const FullQuote = ({ quote, expandQuote, character }) => {
@@ -19,6 +19,14 @@ const FullQuote = ({ quote, expandQuote, character }) => {
       },
     },
   };
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden"; // Prevent scrolling in the background
+    return () => {
+      document.body.style.overflow = "auto"; // Restore scrolling on component unmount
+    };
+  }, []);
+
   return (
     <StyledFullQuote
       variants={fullQuoteVariants}
@@ -30,10 +38,10 @@ const FullQuote = ({ quote, expandQuote, character }) => {
         Show Less
       </button>
 
-      <p className="character text-red">- {character} -</p>
+      {character}
 
-      <div className="container-quote">
-        <p className="quote">{quote}</p>
+      <div className="container-full-quote">
+        <p className="full-quote">{quote}</p>
       </div>
       <button onClick={expandQuote} className="show-more text-grey">
         Show Less

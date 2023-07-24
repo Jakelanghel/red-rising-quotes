@@ -25,7 +25,7 @@ export const GlobalStyles = createGlobalStyle`
         color: var(--white);
         background-color: var(--black-2);
         text-align: center;
-
+        position: relative;
     }
 
     .error-msg {
@@ -83,6 +83,7 @@ export const GlobalStyles = createGlobalStyle`
         height: 92%;
         padding: 0 1rem;
         padding-top: 2rem;
+
     }
 
     .search-page {

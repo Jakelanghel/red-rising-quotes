@@ -20,7 +20,7 @@ const GameDropDowns = (props) => {
   const startGame = () => {
     if (gameState.selectedBook && gameState.length) {
       fetchData(
-        `http://localhost:5000/api/red-rising/game/?slug=${gameState.selectedBook}&length=${gameState.length}`
+        `https://dynamic-api-proxy.onrender.com/api/red-rising/game/?slug=${gameState.selectedBook}&length=${gameState.length}`
       );
       setGameState((oldState) => ({
         ...oldState,

@@ -1,6 +1,7 @@
 import React from "react";
 import { StyledQuestionCard } from "./QuestionCard.Styled";
 import { fadeInVariant } from "../../../../shared/motion/fadeInVariants";
+import QuoteCard from "../../../../shared/quote-card/QuoteCard";
 
 const QuestionCard = (props) => {
   const { answerElements, question } = props;
@@ -10,10 +11,12 @@ const QuestionCard = (props) => {
       initial="initial"
       animate="animate"
     >
-      <p className="question fs-3 p-3">{question}</p>
-      <div className="d-flex flex-row flex-wrap justify-content-center gap-3">
-        {answerElements}
-      </div>
+      <QuoteCard
+        quote={question}
+        customClass={"question-quote"}
+        parentComponent="game"
+      />
+      <div className="container-answers">{answerElements}</div>
     </StyledQuestionCard>
   );
 };
