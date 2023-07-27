@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { useHasOverFlow } from "../../../hooks/useHasOverFlow";
-import { scrollToTop } from "../../../util/scrollToTop";
 import { StyledQuoteCard } from "./QuoteCard.Styled";
 import { fadeInVariant } from "../motion/fadeInVariants";
 import { renderShowMore } from "./render/renderShowMore";
@@ -47,11 +46,11 @@ const QuoteCard = ({
       <div className={containerClass} ref={containerRef}>
         <p className={`quote ${quoteClass}`}>{quote}</p>
       </div>
+      {name}
 
       <div className="container-show-more d-flex justify-content-center">
         {showMoreBtn}
       </div>
-      {name}
       {chapterInfo}
     </StyledQuoteCard>
   );

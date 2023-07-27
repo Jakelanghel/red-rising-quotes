@@ -4,11 +4,11 @@ import { renderGameElements } from "./render/renderGameElements";
 import { renderError } from "./render/renderError";
 import { renderTitle } from "./render/renderTitle";
 import { StyledGame } from "./Game.Styled";
-import Page from "../../shared/motion/components/Page";
+import Page from "../../shared/motion/page/Page";
 
 const Game = ({ allCharacters }) => {
   const { data, fetchData, isLoading, apiError, apiErrorMsg } = useFetch();
-  console.log(data);
+
   const initialState = {
     gameStarted: false,
     gameOver: false,
@@ -37,6 +37,7 @@ const Game = ({ allCharacters }) => {
     <Page customClass="game">
       <StyledGame>
         {title}
+
         {renderedContent}
         {errorMsg}
       </StyledGame>

@@ -80,16 +80,31 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     .page {
-        height: 92%;
-        padding: 0 1rem;
-        padding-top: 2rem;
-
+        height: 93%;
+        padding: 2rem 1rem;
     }
 
     .search-page {
-        min-height: 92%;    
+        height: auto;
+
     }
 
+    .home {
+        padding-bottom: 0;
+    }
     
-  
+    .search-quote {
+        min-height: 315px;
+        border: solid 2px var(--grey-2);
+        padding: 1rem;
+    }
+
+
+  @media screen and (min-width: 800px) {
+    .search-quote {
+        padding: 2rem;
+        max-height: 415px;
+        min-height: 415px;
+    }
+  }
 `;

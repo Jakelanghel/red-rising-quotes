@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
 export const StyledHome = styled.main`
-  height: 100%;
+  height: 92%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
   .button {
+    margin: 1.5rem 0;
+  }
+
+  .container-img {
+    width: 100%;
     margin-top: auto;
   }
 
@@ -15,7 +20,7 @@ export const StyledHome = styled.main`
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
-    margin-top: 2rem;
+    padding: 0;
     opacity: 0.8;
   }
 `;

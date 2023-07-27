@@ -12,15 +12,4 @@ export const StyledFullQuote = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  .full-quote {
-    height: 100%;
-    font-size: 1.25rem;
-    color: #fff;
-    font-weight: 300;
-    text-align: center;
-    font-family: "League Spartan", sans-serif;
-    margin: 0;
-    padding: 0 1rem;
-  }
 `;

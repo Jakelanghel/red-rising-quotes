@@ -7,6 +7,10 @@ export const StyledSearch = styled.div`
   height: 100%;
   position: relative;
 
+  .container-loader {
+    margin-top: 10rem;
+  }
+
   .container-title {
     max-width: 500px;
     margin: 0 auto;
@@ -27,11 +31,6 @@ export const StyledSearch = styled.div`
     display: flex;
     align-items: center;
     height: 60%;
-  }
-
-  .search-quote {
-    border: solid 2px var(--grey-2);
-    padding: 1.25rem;
   }
 
   .wobble-div {

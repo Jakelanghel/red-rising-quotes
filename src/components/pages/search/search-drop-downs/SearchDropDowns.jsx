@@ -6,15 +6,19 @@ import { Button } from "react-bootstrap";
 const SearchDropDowns = ({ allCharacters, fetchData, wobble }) => {
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [length, setLength] = useState("all");
+  const [buttonIsDisabled, setButtonIsDisabled] = useState(true);
 
   const handleCharacterSelect = (eventKey) => {
     setSelectedCharacter(eventKey);
+    setButtonIsDisabled(false);
   };
   const handleQuantitySelect = (eventKey) => {
     setLength(eventKey);
   };
 
   const handleSubmit = () => {
+    setButtonIsDisabled(true);
+
     if (selectedCharacter) {
       fetchData(
         `https://dynamic-api-proxy.onrender.com/api/red-rising/character-quotes/?slug=${selectedCharacter}&quantity=${length}`
@@ -63,7 +67,11 @@ const SearchDropDowns = ({ allCharacters, fetchData, wobble }) => {
           </Dropdown.Menu>
         </Dropdown>
       </div>
-      <Button onClick={handleSubmit} className="button">
+      <Button
+        disabled={buttonIsDisabled}
+        onClick={handleSubmit}
+        className="button"
+      >
         Get Quotes
       </Button>
     </div>

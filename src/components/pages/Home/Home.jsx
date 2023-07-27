@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useFetch } from "../../../hooks/useFetch";
 import { StyledHome } from "./Home.Styled";
-import Page from "../../shared//motion/components/Page";
+import Page from "../../shared/motion/page/Page";
 import QuoteCard from "../../shared/quote-card/QuoteCard";
 import Button from "react-bootstrap/Button";
 import pyramidImg from "../../../assets/pyramid.png";
@@ -33,7 +33,7 @@ const Home = () => {
   };
 
   return (
-    <Page>
+    <Page customClass="home">
       <StyledHome>
         <QuoteCard
           key={quoteKey}

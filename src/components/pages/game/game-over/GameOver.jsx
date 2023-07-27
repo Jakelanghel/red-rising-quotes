@@ -25,8 +25,8 @@ const GameOver = ({ score, length, setGameState }) => {
     >
       <h1>Game Over</h1>
       <h2>
-        You scored a <span className="score">{score}</span> out of
-        <span className="score"> {length}</span>
+        Score : <span className="score">{score}</span> /
+        <span className="total"> {length}</span>
       </h2>
       <Button onClick={handelClick} className="button m-4">
         Start New Quiz

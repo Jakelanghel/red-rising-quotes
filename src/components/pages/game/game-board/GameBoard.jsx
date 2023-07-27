@@ -1,5 +1,5 @@
 import React from "react";
-import { generateQuestions } from "../generate-questions/generateQuestions";
+import { generateQuestions } from "./generate-questions/generateQuestions";
 import { StyledGameBoard } from "./GameBoard.Styled";
 
 const GameBoard = ({ gameState, setGameState, allCharacters, quotesData }) => {
@@ -25,11 +25,7 @@ const GameBoard = ({ gameState, setGameState, allCharacters, quotesData }) => {
     ? questionElements[gameState.currentQuestion]
     : null;
 
-  return (
-    <StyledGameBoard className="text-grey text-center p-2">
-      {question}
-    </StyledGameBoard>
-  );
+  return <StyledGameBoard>{question}</StyledGameBoard>;
 };
 
 export default GameBoard;

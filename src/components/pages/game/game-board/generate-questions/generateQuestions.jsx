@@ -1,7 +1,7 @@
 import React from "react";
 import { nanoid } from "nanoid";
 import { generateAnswers } from "./generate-answers/generateAnswers";
-import QuestionCard from "../game-board/question-card/QuestionCard";
+import QuestionCard from "../question-card/QuestionCard";
 
 export const generateQuestions = (allCharacters, quotesData, handleClick) => {
   if (!quotesData) {

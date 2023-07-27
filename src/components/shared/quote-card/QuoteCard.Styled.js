@@ -4,13 +4,18 @@ import { motion } from "framer-motion";
 export const StyledQuoteCard = styled(motion.div)`
   width: 100%;
   max-width: 425px;
+  max-height: 315px;
+  margin: auto 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
   border-radius: 15px;
 
   .container-quote {
-    height: 215px;
+    max-width: 400px;
+    align-self: center;
     overflow: hidden;
+    margin: auto;
   }
 
   .container-game-quote {
@@ -32,11 +37,6 @@ export const StyledQuoteCard = styled(motion.div)`
     cursor: default;
   }
 
-  .container-quote {
-    max-width: 400px;
-    margin: 0 auto;
-  }
-
   .quote,
   .character {
     font-weight: 300;
@@ -54,7 +54,20 @@ export const StyledQuoteCard = styled(motion.div)`
     color: #fff;
   }
 
-  .game-quote {
+  .character {
+    margin-top: 1rem;
+  }
+
+  .full-quote {
+    max-width: 425px;
+    margin: 0 auto;
+    height: 100%;
+    font-size: 1.25rem;
+    color: #fff;
+    font-weight: 300;
+    text-align: center;
+    font-family: "League Spartan", sans-serif;
+    padding: 0 1rem;
   }
 
   .sml-quote {
@@ -71,23 +84,35 @@ export const StyledQuoteCard = styled(motion.div)`
 
   .quote-info {
     width: 100%;
-    margin-top: 1rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 1rem;
   }
 
   .book-txt,
   .chapter-txt {
-    font-size: 0.85rem;
+    font-size: 1rem;
+  }
+
+  @media screen and (min-width: 425px) {
+    .quote,
+    .full-quote {
+      font-size: 1.5rem;
+    }
   }
 
   @media screen and (min-width: 800px) {
-    .container-quote {
-      max-width: 600px;
+    max-width: 500px;
+
+    .quote,
+    .full-quote {
+      font-size: 1.65rem;
     }
-    .quote {
-      font-size: 1.5rem;
+
+    .book-txt,
+    .chapter-txt {
+      font-size: 1.25rem;
     }
   }
 `;
