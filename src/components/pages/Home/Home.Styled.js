@@ -7,8 +7,19 @@ export const StyledHome = styled.main`
   justify-content: center;
   align-items: center;
 
-  .button {
+  .container {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .home-btn {
+    font-size: 1.15rem;
     margin: 1.5rem 0;
+    padding: 0.5rem 1.5rem;
   }
 
   .container-img {

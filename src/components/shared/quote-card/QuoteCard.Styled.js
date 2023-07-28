@@ -50,7 +50,7 @@ export const StyledQuoteCard = styled(motion.div)`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: #fff;
   }
 

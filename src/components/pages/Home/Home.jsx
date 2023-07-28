@@ -35,26 +35,28 @@ const Home = () => {
   return (
     <Page customClass="home">
       <StyledHome>
-        <QuoteCard
-          key={quoteKey}
-          book={quoteData.book}
-          character={quoteData.character}
-          quote={quoteData.quote}
-          chapterNumber={quoteData.chapterNumber}
-          chapterName={quoteData.chapterName}
-          parentComponent={"home"}
-        />
+        <div className="container">
+          <QuoteCard
+            key={quoteKey}
+            book={quoteData.book}
+            character={quoteData.character}
+            quote={quoteData.quote}
+            chapterNumber={quoteData.chapterNumber}
+            chapterName={quoteData.chapterName}
+            parentComponent="home"
+          />
 
-        {error}
+          {error}
 
-        <Button
-          onClick={handleClick}
-          className="button"
-          active
-          disabled={buttonDisabled}
-        >
-          Get Random Quote
-        </Button>
+          <Button
+            onClick={handleClick}
+            className="button home-btn"
+            active
+            disabled={buttonDisabled}
+          >
+            Get Random Quote
+          </Button>
+        </div>
 
         <div className="container-img">
           <img className="pyramid" src={pyramidImg} alt="" />
