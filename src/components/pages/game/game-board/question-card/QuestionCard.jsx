@@ -13,7 +13,7 @@ const QuestionCard = (props) => {
     >
       <QuoteCard
         quote={question}
-        customClass={"question-quote"}
+        customClass="question-quote"
         parentComponent="game"
       />
       <div className="container-answers">{answerElements}</div>

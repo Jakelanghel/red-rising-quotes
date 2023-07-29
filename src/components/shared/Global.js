@@ -79,18 +79,25 @@ export const GlobalStyles = createGlobalStyle`
 
     }
 
-    .page {
+    .app {
         height: 93%;
+    }
+
+    .page {
+        min-height: 100%;
         padding: 2rem 1rem;
     }
 
     .search-page {
         height: auto;
-
     }
 
     .home {
         padding-bottom: 0;
+    }
+
+    .game {
+        height: 100%;
     }
     
     .search-quote {

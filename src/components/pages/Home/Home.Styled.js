@@ -9,6 +9,7 @@ export const StyledHome = styled.main`
 
   .container {
     min-height: 400px;
+    max-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;

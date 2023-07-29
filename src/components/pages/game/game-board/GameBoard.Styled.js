@@ -2,10 +2,7 @@ import styled from "styled-components";
 
 export const StyledGameBoard = styled.div`
   display: flex;
-  height: 100%;
+  min-height: 98%;
   width: 100%;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
+  padding-bottom: 1rem;
 `;

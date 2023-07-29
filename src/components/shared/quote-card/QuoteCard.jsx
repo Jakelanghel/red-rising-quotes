@@ -14,6 +14,7 @@ const QuoteCard = ({
   quote = null,
   chapterData = null,
   parentComponent = null,
+  customClass = null,
 }) => {
   const containerRef = useRef(null);
   const [showMore, setShowMore] = useState(false);
@@ -44,7 +45,7 @@ const QuoteCard = ({
       </AnimatePresence>
 
       <div className={containerClass} ref={containerRef}>
-        <p className={`quote ${quoteClass}`}>{quote}</p>
+        <p className={`quote ${quoteClass} ${customClass}`}>{quote}</p>
       </div>
       {name}
 

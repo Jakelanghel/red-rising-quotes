@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export const StyledQuoteCard = styled(motion.div)`
   width: 100%;
   max-width: 425px;
-  max-height: 315px;
+  max-height: 320px;
   margin: auto 0;
   display: flex;
   flex-direction: column;

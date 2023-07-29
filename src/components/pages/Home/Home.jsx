@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useFetch } from "../../../hooks/useFetch";
 import { StyledHome } from "./Home.Styled";
 import Page from "../../shared/motion/page/Page";
@@ -10,7 +10,7 @@ import ErrorMsg from "../../shared/error/ErrorMsg";
 const Home = () => {
   const [quoteKey, setQuoteKey] = useState(0);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
-  const { data, fetchData, apiError, apiErrorMsg } = useFetch();
+  const { data, fetchData, isLoading, apiError, apiErrorMsg } = useFetch();
 
   const handleClick = () => {
     setIsButtonDisabled(true);
@@ -31,6 +31,10 @@ const Home = () => {
     chapterNumber: 0,
     chapterName: "Prolog",
   };
+
+  useEffect(() => {
+    window.location.reload();
+  }, []);
 
   return (
     <Page customClass="home">
