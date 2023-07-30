@@ -16,6 +16,10 @@ export const GlobalStyles = createGlobalStyle`
         margin: 0;
         box-sizing: border-box;
     }
+
+    #root {
+        height: 100%;
+    }
     
     html, 
     body {
@@ -30,14 +34,6 @@ export const GlobalStyles = createGlobalStyle`
 
     .error-msg {
         margin-top: 1rem;
-    }
-
-    p {
-        margin: 0
-    }
-
-    #root {
-        height: 100%;
     }
 
     .brand {
@@ -76,15 +72,14 @@ export const GlobalStyles = createGlobalStyle`
     .text-red {
         color:  var(--red);
         font-weight: 700;
-
     }
 
     .app {
-        height: 93%;
+        height: 100%;
     }
 
     .page {
-        min-height: 100%;
+        min-height: 93%;
         padding: 2rem 1rem;
     }
 
@@ -93,6 +88,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     .home {
+        height: 93%;
         padding-bottom: 0;
     }
 

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { useFetch } from "../../../hooks/useFetch";
+import { useFetch } from "../../hooks/useFetch";
 import { generateQuoteElements } from "./generate-quote-elements/generateQuoteElements";
 import { StyledSearch } from "./Search.Styled";
 
-import Page from "../../shared/motion/page/Page";
-import ErrorMsg from "../../shared/error/ErrorMsg";
+import Page from "../../pages/motion-page/Page";
+import ErrorMsg from "../../components/error/ErrorMsg";
 import SearchContent from "./search-content/SearchContent";
 import SearchDropDowns from "./search-drop-downs/SearchDropDowns";
 

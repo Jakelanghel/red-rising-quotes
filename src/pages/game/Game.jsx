@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useFetch } from "../../../hooks/useFetch";
+import { useFetch } from "../../hooks/useFetch";
 import { renderGameElements } from "./render/renderGameElements";
 import { renderError } from "./render/renderError";
 import { renderTitle } from "./render/renderTitle";
 import { StyledGame } from "./Game.Styled";
-import Page from "../../shared/motion/page/Page";
+import Page from "../../pages/motion-page/Page";
 
 const Game = ({ allCharacters }) => {
   const { data, fetchData, isLoading, apiError, apiErrorMsg } = useFetch();

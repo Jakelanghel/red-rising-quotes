@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { StyledGameOver } from "./GameOver.Styled";
-import { fadeInVariant } from "../../../shared/motion/fadeInVariants";
+import { fadeInVariants } from "../../../shared/fadeInVariants";
 
 const GameOver = ({ score, length, setGameState }) => {
   const handelClick = () => {

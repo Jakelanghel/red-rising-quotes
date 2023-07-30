@@ -1,7 +1,7 @@
-import { generateRandomNumbers } from "../../../../../../util/generateRandomNumbers";
+import { generateRandomNumbers } from "../../../../../util/generateRandomNumbers";
 import { Button } from "react-bootstrap";
 import { nanoid } from "nanoid";
-import { filterAnswers } from "../../../../../../util/filterAnswers";
+import { filterAnswers } from "../../../../../util/filterAnswers";
 
 export const generateAnswers = (allCharacters, quote, handleClick) => {
   const correctAnswer = quote.character;

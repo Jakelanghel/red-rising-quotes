@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import { useHasOverFlow } from "../../../hooks/useHasOverFlow";
+import { useHasOverFlow } from "../../hooks/useHasOverFlow";
 import { StyledQuoteCard } from "./QuoteCard.Styled";
-import { fadeInVariant } from "../motion/fadeInVariants";
+import { fadeInVariants } from "../../shared/fadeInVariants";
 import { renderShowMore } from "./render/renderShowMore";
 import { renderName } from "./render/renderName";
 import { renderChapterInfo } from "./render/renderChapterInfo";
@@ -33,7 +33,7 @@ const QuoteCard = ({
 
   return (
     <StyledQuoteCard
-      variants={fadeInVariant}
+      variants={fadeInVariants}
       initial="initial"
       animate="animate"
       className={parentComponent === "search" ? "search-quote" : null}
@@ -46,8 +46,8 @@ const QuoteCard = ({
 
       <div className={containerClass} ref={containerRef}>
         <p className={`quote ${quoteClass} ${customClass}`}>{quote}</p>
+        {name}
       </div>
-      {name}
 
       <div className="container-show-more d-flex justify-content-center">
         {showMoreBtn}

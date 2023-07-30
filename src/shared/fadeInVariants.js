@@ -1,4 +1,4 @@
-export const fadeInVariant = {
+export const fadeInVariants = {
   initial: {
     opacity: 0,
     scale: 0.5,
@@ -8,7 +8,7 @@ export const fadeInVariant = {
     scale: 1,
     transition: {
       duration: 0.5,
-      delay: 0.5,
+      delay: 1,
     },
   },
 };

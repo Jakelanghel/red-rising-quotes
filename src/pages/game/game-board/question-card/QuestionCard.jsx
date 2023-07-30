@@ -1,7 +1,7 @@
 import React from "react";
 import { StyledQuestionCard } from "./QuestionCard.Styled";
-import { fadeInVariant } from "../../../../shared/motion/fadeInVariants";
-import QuoteCard from "../../../../shared/quote-card/QuoteCard";
+import { fadeInVariants } from "../../../../shared/fadeInVariants";
+import QuoteCard from "../../../../components/quote-card/QuoteCard";
 
 const QuestionCard = (props) => {
   const { answerElements, question } = props;

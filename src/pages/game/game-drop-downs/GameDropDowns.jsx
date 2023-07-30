@@ -2,7 +2,7 @@ import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import BooksDropDown from "./books-dropdown/BooksDropDown";
 import { Button } from "react-bootstrap";
-import { useGetBooks } from "../../../../hooks/useGetBooks";
+import { useGetBooks } from "../../../hooks/useGetBooks";
 
 const GameDropDowns = (props) => {
   const { gameState, setGameState, fetchData } = props;

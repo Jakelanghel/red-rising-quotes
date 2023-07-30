@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 import { parseChapterInfo } from "./parseChapterInfo";
-import QuoteCard from "../../../shared/quote-card/QuoteCard";
+import QuoteCard from "../../../components/quote-card/QuoteCard";
 
 export const generateQuoteElements = (data) => {
   if (!data) {

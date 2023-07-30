@@ -1,7 +1,7 @@
 import React from "react";
 import Navigation from "./components/Navigation/Navigation";
-import { GlobalStyles } from "./components/shared/Global";
-import Router from "./components/router/Router";
+import { GlobalStyles } from "./shared/Global";
+import Router from "./router/Router";
 
 function App() {
   return (

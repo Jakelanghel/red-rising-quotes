@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useFetch } from "../../../hooks/useFetch";
+import { useFetch } from "../../hooks/useFetch";
 import { StyledHome } from "./Home.Styled";
-import Page from "../../shared/motion/page/Page";
-import QuoteCard from "../../shared/quote-card/QuoteCard";
+import Page from "../../pages/motion-page/Page";
+import QuoteCard from "../../components/quote-card/QuoteCard";
 import Button from "react-bootstrap/Button";
-import pyramidImg from "../../../assets/pyramid.png";
-import ErrorMsg from "../../shared/error/ErrorMsg";
+import pyramidImg from "../../assets/pyramid.png";
+import ErrorMsg from "../../components/error/ErrorMsg";
 
 const Home = () => {
   const [quoteKey, setQuoteKey] = useState(0);
@@ -32,9 +32,9 @@ const Home = () => {
     chapterName: "Prolog",
   };
 
-  useEffect(() => {
-    window.location.reload();
-  }, []);
+  // useEffect(() => {
+  //   window.location.reload();
+  // }, []);
 
   return (
     <Page customClass="home">
