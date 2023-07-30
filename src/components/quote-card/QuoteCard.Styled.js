@@ -5,7 +5,6 @@ export const StyledQuoteCard = styled(motion.div)`
   width: 100%;
   max-width: 425px;
   max-height: 305px;
-  min-height: 305px;
   margin: auto 0;
   display: flex;
   flex-direction: column;

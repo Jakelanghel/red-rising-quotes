@@ -46,8 +46,8 @@ const QuoteCard = ({
 
       <div className={containerClass} ref={containerRef}>
         <p className={`quote ${quoteClass} ${customClass}`}>{quote}</p>
-        {name}
       </div>
+      {name}
 
       <div className="container-show-more d-flex justify-content-center">
         {showMoreBtn}
