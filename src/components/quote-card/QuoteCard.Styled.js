@@ -8,7 +8,6 @@ export const StyledQuoteCard = styled(motion.div)`
 
   .home-quote {
     max-height: 215px;
-    overflow: hidden;
   }
 
   .search-quote {
@@ -22,16 +21,20 @@ export const StyledQuoteCard = styled(motion.div)`
     border: solid 2px var(--grey-2);
   }
 
+  .game-quote {
+    max-height: 350px;
+    min-height: 350px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .container-quote {
     max-width: 400px;
     align-self: center;
     overflow: hidden;
     margin: auto;
-  }
-
-  .container-game-quote {
-    height: 275px;
-    overflow: hidden;
   }
 
   .quote,
@@ -43,25 +46,13 @@ export const StyledQuoteCard = styled(motion.div)`
   }
 
   .quote {
-    height: 100%;
+    max-height: 150px;
     font-size: 1.5rem;
     color: #fff;
   }
 
   .character {
     margin: 1rem 0;
-  }
-
-  .full-quote {
-    max-width: 425px;
-    margin: 0 auto;
-    height: 100%;
-    font-size: 1.25rem;
-    color: #fff;
-    font-weight: 300;
-    text-align: center;
-    font-family: "League Spartan", sans-serif;
-    padding: 0 1rem;
   }
 
   .container-search-quote {

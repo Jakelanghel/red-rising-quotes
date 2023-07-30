@@ -18,6 +18,7 @@ const QuoteCard = ({
   const containerRef = useRef(null);
   const [showMore, setShowMore] = useState(false);
   const hasOverflow = useHasOverFlow(containerRef, quote);
+  console.log(hasOverflow);
 
   const expandQuote = () => {
     setShowMore((oldState) => !oldState);
@@ -50,13 +51,13 @@ const QuoteCard = ({
         <div className={containerClass} ref={containerRef}>
           <p className={`quote ${quoteClass}`}>{quote}</p>
         </div>
+        {name}
 
         <div className="container-show-more d-flex justify-content-center">
           {showMoreBtn}
         </div>
         {chapterInfo}
       </div>
-      {name}
     </StyledQuoteCard>
   );
 };

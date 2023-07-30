@@ -14,12 +14,13 @@ export const StyledFullQuote = styled(motion.div)`
   justify-content: center;
 
   .full-quote {
-    font-size: 1.75rem;
+    font-size: 1.65rem;
     font-weight: 300;
     text-align: center;
     font-family: "League Spartan", sans-serif;
     margin: 0;
     color: #fff;
+    padding: 0 1rem;
   }
 
   .character {
