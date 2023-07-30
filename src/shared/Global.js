@@ -96,11 +96,7 @@ export const GlobalStyles = createGlobalStyle`
         height: 93%;
     }
     
-    .search-quote {
-        min-height: 315px;
-        border: solid 2px var(--grey-2);
-        padding: 1rem;
-    }
+    
 
 
   @media screen and (min-width: 800px) {

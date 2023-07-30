@@ -14,7 +14,6 @@ const QuoteCard = ({
   quote = null,
   chapterData = null,
   parentComponent = null,
-  customClass = null,
 }) => {
   const containerRef = useRef(null);
   const [showMore, setShowMore] = useState(false);
@@ -36,23 +35,28 @@ const QuoteCard = ({
       variants={fadeInVariants}
       initial="initial"
       animate="animate"
-      className={parentComponent === "search" ? "search-quote" : null}
     >
-      <AnimatePresence mode="wait">
-        {showMore ? (
-          <FullQuote quote={quote} expandQuote={expandQuote} character={name} />
-        ) : null}
-      </AnimatePresence>
+      <div className={`${parentComponent}-quote`}>
+        <AnimatePresence mode="wait">
+          {showMore ? (
+            <FullQuote
+              quote={quote}
+              expandQuote={expandQuote}
+              character={name}
+            />
+          ) : null}
+        </AnimatePresence>
 
-      <div className={containerClass} ref={containerRef}>
-        <p className={`quote ${quoteClass} ${customClass}`}>{quote}</p>
-      </div>
-      {name}
+        <div className={containerClass} ref={containerRef}>
+          <p className={`quote ${quoteClass}`}>{quote}</p>
+        </div>
+        {name}
 
-      <div className="container-show-more d-flex justify-content-center">
-        {showMoreBtn}
+        <div className="container-show-more d-flex justify-content-center">
+          {showMoreBtn}
+        </div>
+        {chapterInfo}
       </div>
-      {chapterInfo}
     </StyledQuoteCard>
   );
 };

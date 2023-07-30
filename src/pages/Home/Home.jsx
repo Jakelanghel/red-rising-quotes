@@ -32,10 +32,6 @@ const Home = () => {
     chapterName: "Prolog",
   };
 
-  // useEffect(() => {
-  //   window.location.reload();
-  // }, []);
-
   return (
     <Page customClass="home">
       <StyledHome>

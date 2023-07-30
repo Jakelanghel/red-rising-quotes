@@ -4,12 +4,22 @@ import { motion } from "framer-motion";
 export const StyledQuoteCard = styled(motion.div)`
   width: 100%;
   max-width: 425px;
-  max-height: 305px;
   margin: auto 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 15px;
+
+  .home-quote {
+    max-height: 305px;
+  }
+
+  .search-quote {
+    min-height: 365px;
+    max-height: 365px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    overflow: hidden;
+    border-radius: 10px;
+    border: solid 2px var(--grey-2);
+  }
 
   .container-quote {
     max-width: 400px;
@@ -23,20 +33,6 @@ export const StyledQuoteCard = styled(motion.div)`
     overflow: hidden;
   }
 
-  .show-more {
-    border: none;
-    background-color: transparent;
-    padding: 0.75rem 1.5rem;
-  }
-
-  .hidden {
-    opacity: 0;
-  }
-
-  .hidden:hover {
-    cursor: default;
-  }
-
   .quote,
   .character {
     font-weight: 300;
@@ -47,16 +43,15 @@ export const StyledQuoteCard = styled(motion.div)`
 
   .quote {
     height: 100%;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     font-size: 1.5rem;
     color: #fff;
-    overflow: hidden;
   }
 
   .character {
-    margin-top: 1rem;
+    margin: 1rem 0;
   }
 
   .full-quote {
@@ -69,6 +64,9 @@ export const StyledQuoteCard = styled(motion.div)`
     text-align: center;
     font-family: "League Spartan", sans-serif;
     padding: 0 1rem;
+  }
+
+  .container-search-quote {
   }
 
   .sml-quote {
@@ -94,6 +92,20 @@ export const StyledQuoteCard = styled(motion.div)`
   .book-txt,
   .chapter-txt {
     font-size: 1rem;
+  }
+
+  .show-more {
+    border: none;
+    background-color: transparent;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .hidden {
+    opacity: 0;
+  }
+
+  .hidden:hover {
+    cursor: default;
   }
 
   @media screen and (min-width: 425px) {

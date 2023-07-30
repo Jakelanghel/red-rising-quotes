@@ -11,11 +11,7 @@ const QuestionCard = (props) => {
       initial="initial"
       animate="animate"
     >
-      <QuoteCard
-        quote={question}
-        customClass="question-quote"
-        parentComponent="game"
-      />
+      <QuoteCard quote={question} parentComponent="game" />
       <div className="container-answers">{answerElements}</div>
     </StyledQuestionCard>
   );

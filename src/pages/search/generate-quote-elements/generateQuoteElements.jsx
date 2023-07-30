@@ -17,6 +17,7 @@ export const generateQuoteElements = (data) => {
         chapterData={chapterData}
         showChapterInfo={true}
         parentComponent="search"
+        customClass="search-quote"
         key={nanoid()}
         id={i}
       />
