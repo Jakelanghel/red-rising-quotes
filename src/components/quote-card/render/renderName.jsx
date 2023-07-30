@@ -1,5 +1,5 @@
 export const renderName = (parentComponent, character) => {
-  if (parentComponent === "home") {
+  if (parentComponent !== "game") {
     return <p className="character text-red">- {character} -</p>;
   }
 };

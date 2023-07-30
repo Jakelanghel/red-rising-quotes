@@ -7,7 +7,7 @@ const QuestionCard = (props) => {
   const { answerElements, question } = props;
   return (
     <StyledQuestionCard
-      variants={fadeInVariant}
+      variants={fadeInVariants}
       initial="initial"
       animate="animate"
     >

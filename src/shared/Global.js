@@ -93,7 +93,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     .game {
-        height: 100%;
+        height: 93%;
     }
     
     .search-quote {
