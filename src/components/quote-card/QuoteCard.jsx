@@ -50,13 +50,13 @@ const QuoteCard = ({
         <div className={containerClass} ref={containerRef}>
           <p className={`quote ${quoteClass}`}>{quote}</p>
         </div>
-        {name}
 
         <div className="container-show-more d-flex justify-content-center">
           {showMoreBtn}
         </div>
         {chapterInfo}
       </div>
+      {name}
     </StyledQuoteCard>
   );
 };

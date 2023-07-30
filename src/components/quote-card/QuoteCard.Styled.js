@@ -7,7 +7,8 @@ export const StyledQuoteCard = styled(motion.div)`
   margin: auto 0;
 
   .home-quote {
-    max-height: 305px;
+    max-height: 215px;
+    overflow: hidden;
   }
 
   .search-quote {
@@ -43,9 +44,6 @@ export const StyledQuoteCard = styled(motion.div)`
 
   .quote {
     height: 100%;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     font-size: 1.5rem;
     color: #fff;
   }
