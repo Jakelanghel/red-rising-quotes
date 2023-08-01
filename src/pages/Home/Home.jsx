@@ -6,23 +6,19 @@ import QuoteCard from "../../components/quote-card/QuoteCard";
 import Button from "react-bootstrap/Button";
 import pyramidImg from "../../assets/pyramid.png";
 import ErrorMsg from "../../components/error/ErrorMsg";
+import HomeContent from "./home-content/HomeContent";
 
 const Home = () => {
   const [quoteKey, setQuoteKey] = useState(0);
-  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const { data, fetchData, isLoading, apiError, apiErrorMsg } = useFetch();
 
   const handleClick = () => {
-    setIsButtonDisabled(true);
     fetchData("https://dynamic-api-proxy.onrender.com/api/red-rising/random/");
     setQuoteKey((prevKey) => prevKey + 1);
-    setTimeout(() => {
-      setIsButtonDisabled(false);
-    }, 1000);
   };
 
   const error = apiError ? <ErrorMsg error={apiErrorMsg} /> : null;
-  const buttonDisabled = isButtonDisabled || apiError;
+  const buttonDisabled = isLoading ? true : false;
 
   const quoteData = data || {
     book: "Red Rising",
@@ -36,17 +32,13 @@ const Home = () => {
     <Page customClass="home">
       <StyledHome>
         <div className="container">
-          <QuoteCard
-            key={quoteKey}
-            book={quoteData.book}
+          {error}
+          <HomeContent
+            isLoading={isLoading}
+            quoteKey={quoteKey}
             character={quoteData.character}
             quote={quoteData.quote}
-            chapterNumber={quoteData.chapterNumber}
-            chapterName={quoteData.chapterName}
-            parentComponent="home"
           />
-
-          {error}
 
           <Button
             onClick={handleClick}

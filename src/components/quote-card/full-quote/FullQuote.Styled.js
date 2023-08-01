@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export const StyledFullQuote = styled(motion.div)`
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -12,13 +12,15 @@ export const StyledFullQuote = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: visible;
 
   .full-quote {
-    font-size: 1.65rem;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.5rem;
     font-weight: 300;
     text-align: center;
     font-family: "League Spartan", sans-serif;
-    margin: 0;
     color: #fff;
     padding: 0 1rem;
   }

@@ -6,30 +6,6 @@ export const StyledQuoteCard = styled(motion.div)`
   max-width: 425px;
   margin: auto 0;
 
-  .home-quote {
-    max-height: 215px;
-  }
-
-  .search-quote {
-    min-height: 365px;
-    max-height: 365px;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    overflow: hidden;
-    border-radius: 10px;
-    border: solid 2px var(--grey-2);
-  }
-
-  .game-quote {
-    max-height: 350px;
-    min-height: 350px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   .container-quote {
     max-width: 400px;
     align-self: center;
@@ -46,7 +22,6 @@ export const StyledQuoteCard = styled(motion.div)`
   }
 
   .quote {
-    max-height: 150px;
     font-size: 1.5rem;
     color: #fff;
   }
@@ -55,15 +30,38 @@ export const StyledQuoteCard = styled(motion.div)`
     margin: 1rem 0;
   }
 
-  .container-search-quote {
-  }
-
   .sml-quote {
     align-items: center;
   }
 
   .lrg-quote {
     align-items: flex-start;
+  }
+
+  .home-quote {
+    max-height: 215px;
+  }
+
+  .search-quote {
+    min-height: 365px;
+    max-height: 365px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    overflow: hidden;
+    border-radius: 10px;
+    border: solid 2px var(--grey-2);
+  }
+
+  .game-quote {
+    max-height: none;
+    /* max-height: 350px;
+    min-height: 350px; */
+    /* overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
   }
 
   .character {
@@ -101,6 +99,10 @@ export const StyledQuoteCard = styled(motion.div)`
     .quote,
     .full-quote {
       font-size: 1.5rem;
+    }
+
+    .search-quote {
+      padding: 2rem;
     }
   }
 

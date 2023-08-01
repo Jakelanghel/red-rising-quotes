@@ -27,12 +27,6 @@ export const StyledSearch = styled.div`
     border-bottom: solid 1px var(--grey-2);
   }
 
-  .container-loader {
-    display: flex;
-    align-items: center;
-    height: 60%;
-  }
-
   .wobble-div {
     height: 100%;
   }

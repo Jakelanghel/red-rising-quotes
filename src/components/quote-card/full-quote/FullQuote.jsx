@@ -34,10 +34,6 @@ const FullQuote = ({ quote, expandQuote, character }) => {
       animate="animate"
       exit="exit"
     >
-      <button onClick={expandQuote} className="show-more text-grey">
-        Show Less
-      </button>
-
       {character}
 
       <div className="container-full-quote">

@@ -20,6 +20,11 @@ export const GlobalStyles = createGlobalStyle`
     #root {
         height: 100%;
     }
+
+    h1, h2, p {
+        margin: 0;
+        padding:0
+    }
     
     html, 
     body {
@@ -34,6 +39,12 @@ export const GlobalStyles = createGlobalStyle`
 
     .error-msg {
         margin-top: 1rem;
+    }
+
+    .container-loader {
+        display: flex;
+        align-items: center;
+        margin: auto 0;
     }
 
     .brand {
@@ -95,6 +106,8 @@ export const GlobalStyles = createGlobalStyle`
     .game {
         height: 93%;
     }
+
+    
     
     
 
