@@ -19,7 +19,7 @@ const GameOver = ({ score, length, setGameState }) => {
 
   return (
     <StyledGameOver
-      variants={fadeInVariant}
+      variants={fadeInVariants}
       initial="initial"
       animate="animate"
     >

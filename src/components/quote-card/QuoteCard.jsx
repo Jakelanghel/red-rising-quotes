@@ -18,7 +18,6 @@ const QuoteCard = ({
   const containerRef = useRef(null);
   const [showMore, setShowMore] = useState(false);
   const hasOverflow = useHasOverFlow(containerRef, quote);
-  console.log(hasOverflow);
 
   const expandQuote = () => {
     setShowMore((oldState) => !oldState);
@@ -37,7 +36,7 @@ const QuoteCard = ({
       initial="initial"
       animate="animate"
     >
-      <div className={`${parentComponent}-quote`}>
+      <div className={`${parentComponent}-quote-container`}>
         <AnimatePresence mode="wait">
           {showMore ? (
             <FullQuote
@@ -48,8 +47,10 @@ const QuoteCard = ({
           ) : null}
         </AnimatePresence>
 
-        <div className={containerClass} ref={containerRef}>
-          <p className={`quote ${quoteClass}`}>{quote}</p>
+        <div className="container-quote" ref={containerRef}>
+          <p className={`quote ${quoteClass} ${parentComponent}-quote`}>
+            {quote}
+          </p>
         </div>
         {name}
 

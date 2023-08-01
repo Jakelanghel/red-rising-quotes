@@ -22,6 +22,7 @@ export const StyledQuoteCard = styled(motion.div)`
   }
 
   .quote {
+    max-height: 150px;
     font-size: 1.5rem;
     color: #fff;
   }
@@ -39,10 +40,14 @@ export const StyledQuoteCard = styled(motion.div)`
   }
 
   .home-quote {
-    max-height: 215px;
+    max-height: 150px;
   }
 
-  .search-quote {
+  .game-quote {
+    max-height: 350px;
+  }
+
+  .search-quote-container {
     min-height: 365px;
     max-height: 365px;
     display: flex;
@@ -51,17 +56,6 @@ export const StyledQuoteCard = styled(motion.div)`
     overflow: hidden;
     border-radius: 10px;
     border: solid 2px var(--grey-2);
-  }
-
-  .game-quote {
-    max-height: none;
-    /* max-height: 350px;
-    min-height: 350px; */
-    /* overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
   }
 
   .character {
