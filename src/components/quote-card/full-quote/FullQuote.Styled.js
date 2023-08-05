@@ -17,7 +17,7 @@ export const StyledFullQuote = styled(motion.div)`
   .full-quote {
     max-width: 600px;
     margin: 0 auto;
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: 300;
     text-align: center;
     font-family: "League Spartan", sans-serif;

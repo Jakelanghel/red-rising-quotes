@@ -112,11 +112,5 @@ export const GlobalStyles = createGlobalStyle`
     
 
 
-  @media screen and (min-width: 800px) {
-    .search-quote {
-        padding: 2rem;
-        max-height: 415px;
-        min-height: 415px;
-    }
-  }
+  
 `;

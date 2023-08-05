@@ -43,6 +43,10 @@ export const StyledQuoteCard = styled(motion.div)`
     max-height: 150px;
   }
 
+  .search-quote {
+    /* max-height: 200px; */
+  }
+
   .game-quote {
     max-height: 350px;
   }
@@ -87,17 +91,6 @@ export const StyledQuoteCard = styled(motion.div)`
 
   .hidden:hover {
     cursor: default;
-  }
-
-  @media screen and (min-width: 425px) {
-    .quote,
-    .full-quote {
-      font-size: 1.5rem;
-    }
-
-    .search-quote {
-      padding: 2rem;
-    }
   }
 
   @media screen and (min-width: 800px) {

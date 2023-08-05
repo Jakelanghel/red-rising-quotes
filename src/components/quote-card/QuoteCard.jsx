@@ -27,8 +27,6 @@ const QuoteCard = ({
   const name = renderName(parentComponent, character);
   const chapterInfo = renderChapterInfo(parentComponent, book, chapterData);
   const quoteClass = hasOverflow ? "lrg-quote" : "sml-quote";
-  const containerClass =
-    parentComponent === "game" ? "container-game-quote" : "container-quote";
 
   return (
     <StyledQuoteCard
